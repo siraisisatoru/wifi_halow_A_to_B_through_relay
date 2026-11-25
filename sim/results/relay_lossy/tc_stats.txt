@@ -1,0 +1,47 @@
+## hlA/eth0
+qdisc netem 1: root refcnt 14 limit 10000 delay 1.6ms  2ms loss 3% rate 1Gbit
+ Sent 526648 bytes 3542 pkt (dropped 98, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+
+## hlB/eth0
+qdisc netem 1: root refcnt 14 limit 10000 delay 1.6ms  2ms loss 3% rate 1Gbit
+ Sent 203878 bytes 1752 pkt (dropped 42, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc clsact ffff: parent ffff:fff1 
+ Sent 208754 bytes 1795 pkt (dropped 1, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+
+## hlR/ra
+qdisc netem 1: root refcnt 14 limit 10000 delay 2.6ms  2ms loss 3% rate 1Gbit
+ Sent 357650 bytes 2985 pkt (dropped 86, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc clsact ffff: parent ffff:fff1 
+ Sent 1689768 bytes 13226 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+
+## hlR/rb
+qdisc netem 1: root refcnt 14 limit 10000 delay 2.6ms  2ms loss 3% rate 1Gbit
+ Sent 349022 bytes 2146 pkt (dropped 80, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc clsact ffff: parent ffff:fff1 
+ Sent 1084404 bytes 7956 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+
+## hlR/air0
+qdisc netem 1: root refcnt 14 limit 50 rate 5200Kbit packetoverhead 924
+ Sent 1461202 bytes 10591 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+
+## hlB/eth0 egress filters
+filter protocol all pref 1 u32 chain 0 
+filter protocol all pref 1 u32 chain 0 fh 800: ht divisor 1 
+filter protocol all pref 1 u32 chain 0 fh 800::800 order 2048 key ht 800 bkt 0 terminal flowid not_in_hw (rule hit 1795 success 1)
+  match 00000100/00000100 at -16 (success 1 ) 
+	action order 1: gact action drop
+	 random type none pass val 0
+	 index 1 ref 1 bind 1 installed 94 sec used 93 sec firstused 93 sec
+	Action statistics:
+	Sent 98 bytes 1 pkt (dropped 1, overlimits 0 requeues 0) 
+	backlog 0b 0p requeues 0
+
+

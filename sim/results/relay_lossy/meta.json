@@ -1,0 +1,78 @@
+{
+  "scenario": {
+    "name": "relay_lossy",
+    "title": "A-relay-B, 3 % loss per hop + jitter",
+    "description": "3 % residual frame loss per hop and direction (after MAC retries) and 2 ms jitter per hop. Round-trip loss over four hop traversals should be about 1 - 0.97^4 = 11.5 %.",
+    "topology": "relay",
+    "duration_s": 90,
+    "medium": {
+      "_comment": "S1G 2 MHz, 1 SS, MCS5, long GI: 5.2 Mbit/s PHY. frame_overhead_us = S1G short preamble 240 + SIFS 160 + NDP ACK 240 + AIFS[BE] 316 + mean backoff 7.5 slots x 52 = 390. mac_overhead_bytes = 4-address QoS MAC header 32 + LLC/SNAP 8 + CCMP 16 + FCS 4.",
+      "mcs": 5,
+      "bandwidth_mhz": 2,
+      "phy_rate_kbps": 5200,
+      "frame_overhead_us": 1350,
+      "mac_overhead_bytes": 60,
+      "queue_frames": 50
+    },
+    "hops": {
+      "a_r": {
+        "delay_ms": 2.0,
+        "jitter_ms": 2.0,
+        "loss_pct": 3.0
+      },
+      "r_b": {
+        "delay_ms": 2.0,
+        "jitter_ms": 2.0,
+        "loss_pct": 3.0
+      }
+    },
+    "relay_fwd_delay_ms": 1.0,
+    "root_drops_group_tx": true,
+    "node_a": {
+      "udp-rate-pps": 10,
+      "udp-payload-len": 64,
+      "tcp-rate-mps": 5,
+      "tcp-payload-len": 256
+    },
+    "ping": {
+      "interval_ms": 200,
+      "size": 56,
+      "targets": [
+        "node_b",
+        "relay"
+      ]
+    },
+    "expect": [
+      {
+        "metric": "flows.udp.loss_pct",
+        "min": 7.0,
+        "max": 16.0
+      },
+      {
+        "metric": "flows.udp_srv.loss_pct",
+        "min": 3.0,
+        "max": 9.0
+      },
+      {
+        "metric": "flows.tcp.acked_pct",
+        "min": 90.0
+      }
+    ]
+  },
+  "clock": {
+    "t0_mono": 1855.418079051,
+    "t0_real": 1793709894.0907753
+  },
+  "timer_comp_ms": 0.3969999999999998,
+  "air_overhead_bytes": 924,
+  "air_counters": {
+    "sent_pkts": 10591,
+    "sent_bytes": 1461202,
+    "dropped": 0,
+    "overlimits": 0
+  },
+  "root_group_tx_dropped": 0,
+  "root_group_selftest_dropped": 1,
+  "pcap": "/tmp/sim_relay_lossy.pcap",
+  "kernel": "7.0.12-linuxkit"
+}

@@ -1,0 +1,10 @@
+# Copyright 2026 siraisisatoru
+#
+# SPDX-License-Identifier: Apache-2.0
+
+## IDF Component Manager Manifest File
+dependencies:
+  # esp-halow submodule (mm-iot-sdk 2.14.3, ESP-IDF 6, S1G relay support).
+  morsemicro/halow:
+    version: "*"
+    override_path: "../../third_party/esp-halow/halow"

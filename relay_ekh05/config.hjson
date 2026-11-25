@@ -1,0 +1,109 @@
+/*
+ * Copyright 2026 siraisisatoru
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Optional config store overrides for the relay_ekh05 firmware.
+ *
+ * Every key is optional: the firmware already contains the lab defaults from
+ * common/include/halow_lab_config.h, and the BCF (bcf_mf08651_us.mbin) is linked into the
+ * application. Only uncomment what you want to change. Key names are the same as the SDK
+ * examples' config.hjson; "lab.*" keys are specific to this firmware.
+ *
+ * Write it with program-configstore.py (see flash.md):
+ *
+ *   - via OpenOCD (Linux host with USB access, inside the ekh05-builder image):
+ *       make -C relay_ekh05 config
+ *     which runs: openocd -f $MMIOT_ROOT/src/platforms/mm-mm6108-ekh05/openocd.cfg &
+ *                 python3 $MMIOT_ROOT/tools/platform/program-configstore.py \
+ *                     -H localhost -p mm-mm6108-ekh05 -d write-json relay_ekh05/config.hjson
+ *
+ *   - without any device access (macOS): build an image that already contains the config store
+ *       ./relay_ekh05/build.sh bin-with-config
+ *     and drag build/relay_ekh05_with_config.bin onto the ST-LINK drive.
+ *
+ * Writing the config store keeps the keys that are already there; remove one with
+ * program-configstore.py ... delete-key <key>, or erase all with ... erase.
+ */
+{
+    "strings" : {
+        /* ---- BSS (must match node B, the relay root) ------------------------------------ */
+        /* SSID of the root AP; the relay AP serves the same SSID. Default "halow-relay-lab". */
+        // "wlan.ssid": "halow-relay-lab"
+        /* SAE passphrase. The default "change-me-halow-au" is a placeholder: change it on all
+         * three nodes for anything outside a shielded lab. */
+        // "wlan.password": "change-me-halow-au"
+        /* sae (default), owe or open. */
+        // "wlan.security": "sae"
+        /* required (default) or disabled. */
+        // "wlan.pmf_mode": "required"
+        /* Regulatory domain (802.11 REVmf channel list for AU). Default "AU". A code that is
+         * not in the regulatory database is logged and ignored. */
+        // "wlan.country_code": "AU"
+
+        /* ---- Topology --------------------------------------------------------------- */
+        /* Pin the upstream root AP BSSID (node B). Default: any BSS with the SSID. */
+        // "wlan.bssid": "00:00:00:00:00:00"
+        /* BSSID of the relay AP. Node A pins this value. Default 02:48:4C:00:00:02. */
+        // "wlan.ap_bssid": "02:48:4C:00:00:02"
+        /* Relay AP beacon interval (TU) and DTIM period. Defaults 100 and 1. */
+        // "wlan.ap_beacon_interval_tus": "100"
+        // "wlan.ap_dtim_period": "1"
+        /* Downstream STAs accepted by the relay AP, 1..MAX_STAS (build value, default 4; the
+         * heap and packet pools are sized for it). More needs a rebuild with MAX_STAS=N. */
+        // "wlan.max_stas": "4"
+        /* Fixed relay depth (test only, 0 = off). */
+        // "wlan.relay_depth_override": "0"
+        /* How long the relay waits for the path to the root to recover before it drops its AP
+         * (and therefore node A). Default 10000. */
+        // "lab.relay_recovery_timeout_ms": "10000"
+        /* Relay forwarding table entries. Default 64. */
+        // "lab.relay_forwarding_table_size": "64"
+
+        /* ---- Scanning --------------------------------------------------------------- */
+        /* First scans of each connection attempt only look at these channels (default "37",
+         * the lab channel), then the full AU list is scanned. "none" disables this. */
+        // "wlan.scan_selected_channels": "37"
+        // "wlan.selective_scan_attempts": "2"
+        /* Reconnect scan backoff: the wait between scans grows by the base factor up to the
+         * limit (2, 4, 8, 10, 10 ... s) and resets on connection. Defaults 2 and 10 (lab
+         * defaults, matching node A); the SDK default limit of 512 s would leave the relay, and
+         * therefore node A, off the air for minutes after node B comes back. */
+        // "wlan.sta_scan_interval_base_s": "2"
+        // "wlan.sta_scan_interval_limit_s": "10"
+
+        /* ---- IPv4 (static, one L2 subnet bridged by the relay) ---------------------- */
+        /* Defaults: 192.168.50.2 / 255.255.255.0, gateway 0.0.0.0, hostname halow-relay.
+         * Addresses must be dotted-quad ("a.b.c.d"); anything else is logged and ignored. */
+        // "ip.ip_addr": "192.168.50.2"
+        // "ip.netmask": "255.255.255.0"
+        // "ip.gateway": "0.0.0.0"
+        // "ip.hostname": "halow-relay"
+        /* DHCP is supported but not recommended here (no DHCP server in the lab plan). */
+        // "ip.dhcp_enabled": "false"
+        /* Optional static ARP entries (N = 0..3), installed on every link-up. Use the peer's
+         * device MAC. Not needed with the SDK patches applied; see README.md. */
+        // "lab.arp0.ip": "192.168.50.10"
+        // "lab.arp0.mac": "xx:xx:xx:xx:xx:xx"
+        // "lab.arp1.ip": "192.168.50.1"
+        // "lab.arp1.mac": "xx:xx:xx:xx:xx:xx"
+
+        /* ---- Services and reporting ------------------------------------------------- */
+        /* UDP echo server for the A <-> relay hop. Default 5000; "0" disables it. */
+        // "lab.udp_echo_port": "5000"
+        /* STATS,udp_srv interval and EVENT,relay,...,ev=health interval. */
+        // "lab.report_interval_ms": "5000"
+        // "lab.health_interval_ms": "10000"
+        /* Status LED. Default true. */
+        // "lab.led_enabled": "true"
+    },
+    "hex_strings" : {
+    },
+    "files" : {
+        /* Only needed if the firmware is built with BCF_MBIN_REL= (BCF not linked in):
+         * the path is relative to this file. */
+        // "bcf_file": "../third_party/mm-iot-sdk/framework/morsefirmware/mm6108/bcfs/bcf_mf08651_us.mbin"
+    }
+}

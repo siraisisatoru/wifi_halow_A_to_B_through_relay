@@ -1,0 +1,76 @@
+{
+  "name": "relay_outage",
+  "title": "A-relay-B, relay-B link black hole 15 s (association held)",
+  "description": "The relay's uplink to node B is black-holed (100 % loss both ways) from t=20 s for 15 s while every interface and association stays up. This models an outage shorter than beacon-loss detection, NOT the relay losing the root: on the EKH05 that also takes the relay's own IP down and, after the 10 s recovery timeout, tears down the relay AP and node A's association (see sim/README.md, Hardware differences). Checks UDP loss accounting and TCP stall detection, backoff and reconnect.",
+  "topology": "relay",
+  "duration_s": 90,
+  "medium": {
+    "_comment": "S1G 2 MHz, 1 SS, MCS5, long GI: 5.2 Mbit/s PHY. frame_overhead_us = S1G short preamble 240 + SIFS 160 + NDP ACK 240 + AIFS[BE] 316 + mean backoff 7.5 slots x 52 = 390. mac_overhead_bytes = 4-address QoS MAC header 32 + LLC/SNAP 8 + CCMP 16 + FCS 4.",
+    "mcs": 5,
+    "bandwidth_mhz": 2,
+    "phy_rate_kbps": 5200,
+    "frame_overhead_us": 1350,
+    "mac_overhead_bytes": 60,
+    "queue_frames": 50
+  },
+  "hops": {
+    "a_r": {
+      "delay_ms": 2.0,
+      "jitter_ms": 0.5,
+      "loss_pct": 0.0
+    },
+    "r_b": {
+      "delay_ms": 2.0,
+      "jitter_ms": 0.5,
+      "loss_pct": 0.0
+    }
+  },
+  "relay_fwd_delay_ms": 1.0,
+  "root_drops_group_tx": true,
+  "node_a": {
+    "udp-rate-pps": 10,
+    "udp-payload-len": 64,
+    "tcp-rate-mps": 5,
+    "tcp-payload-len": 256
+  },
+  "ping": {
+    "interval_ms": 200,
+    "size": 56,
+    "targets": [
+      "node_b",
+      "relay"
+    ]
+  },
+  "events": [
+    {
+      "at_s": 20,
+      "duration_s": 15,
+      "hop": "r_b",
+      "action": "link_down"
+    }
+  ],
+  "expect": [
+    {
+      "metric": "flows.udp.lost",
+      "min": 140,
+      "max": 175
+    },
+    {
+      "metric": "flows.tcp.disconnects",
+      "min": 1
+    },
+    {
+      "metric": "flows.tcp.reconnects",
+      "min": 1
+    },
+    {
+      "metric": "derived.tcp_recovery_after_link_up_s",
+      "max": 15.0
+    },
+    {
+      "metric": "derived.udp_longest_gap_s",
+      "min": 14.0,
+      "max": 17.0
+    }
+  ]
+}

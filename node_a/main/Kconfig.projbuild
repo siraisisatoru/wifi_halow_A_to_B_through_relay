@@ -1,0 +1,333 @@
+# Copyright 2026 siraisisatoru
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Options named CONFIG_LAB_<NAME> are adopted by common/include/halow_lab_config.h as LAB_<NAME>.
+# The defaults are the lab's canonical network plan; node B and the relay must agree with them.
+
+menu "HaLow lab: network plan"
+
+    config LAB_SSID
+        string "SSID"
+        default "halow-relay-lab"
+
+    config LAB_PASSPHRASE
+        string "SAE passphrase"
+        default "change-me-halow-au"
+        help
+            WPA3-SAE passphrase (PMF required). The default is a placeholder and must be changed
+            on all three nodes for anything other than a shielded lab.
+
+    config LAB_COUNTRY
+        string "Country code"
+        default "AU"
+        help
+            Must equal CONFIG_HALOW_COUNTRY_CODE (the code esp-halow loads the channel list
+            for). The application refuses to start the radio if they differ.
+
+    config LAB_S1G_CHAN_NUM
+        int "Expected S1G channel number"
+        range 1 255
+        default 37
+        help
+            The STA follows the AP's channel. Node A only compares the channel it joined with
+            this value and prints a warning if they differ.
+
+    config LAB_OP_CLASS
+        int "Expected operating class"
+        range 1 255
+        default 51
+        help
+            Global operating class of LAB_S1G_CHAN_NUM (S1G class 23). Informational on node A.
+
+    config LAB_RELAY_AP_BSSID
+        string "Relay AP BSSID"
+        default "02:48:4C:00:00:02"
+        help
+            BSSID of the relay's AP interface (mmwlan_relay_ap_args.bssid on the relay).
+
+    config LAB_ROOT_AP_BSSID
+        string "Root AP BSSID (optional)"
+        default ""
+        help
+            BSSID of node B's root AP. Needed only for LAB_A_PIN_ROOT (direct baseline) and to
+            label a connection to the root as "root" instead of "other". Use the bssid= value of
+            node B's ev=root_up line; it is not B's device MAC (ev=boot mac=).
+
+    config LAB_IP_NODE_B
+        string "Node B (root) IPv4 address"
+        default "192.168.50.1"
+
+    config LAB_IP_RELAY
+        string "Relay IPv4 address"
+        default "192.168.50.2"
+
+    config LAB_IP_NODE_A
+        string "Node A IPv4 address"
+        default "192.168.50.10"
+
+    config LAB_NETMASK
+        string "IPv4 netmask"
+        default "255.255.255.0"
+
+    config LAB_GATEWAY
+        string "IPv4 gateway"
+        default "0.0.0.0"
+
+    config LAB_UDP_ECHO_PORT
+        int "UDP echo port"
+        range 1 65535
+        default 5000
+
+    config LAB_TCP_STREAM_PORT
+        int "TCP message stream port"
+        range 1 65535
+        default 5001
+
+    config LAB_REPORT_INTERVAL_MS
+        int "STATS / PING summary interval (ms)"
+        range 0 3600000
+        default 5000
+        help
+            0 prints only the final STATS line of each session (PING summaries then appear only
+            when pings stop).
+
+endmenu
+
+menu "HaLow lab: node A (station)"
+
+    choice A_MODE
+        prompt "Node A role"
+        default A_MODE_PLAIN_STA
+
+        config A_MODE_PLAIN_STA
+            bool "Plain HaLow STA (mmhalow_connect)"
+            help
+                An ordinary STA, unaware of the relay network. Its link is up while it is
+                associated, even when the relay has lost its own uplink to the root.
+
+        config A_MODE_RELAY_STA
+            bool "Relay-aware STA (mmhalow_relay_enable, relay_sta_args only)"
+            select HALOW_AP_MODE
+            select HALOW_RELAY_MODE
+            help
+                An S1G relay STA. esp-halow then reports the link up only while the AP it joined
+                has a path to the root, and the relay depth is printed.
+    endchoice
+
+    choice LAB_A_BSSID_PIN
+        prompt "BSSID to associate with"
+        default LAB_A_PIN_RELAY
+
+        config LAB_A_PIN_RELAY
+            bool "Relay AP (LAB_RELAY_AP_BSSID)"
+            help
+                The root and the relay advertise the same SSID; pinning forces the path through
+                the relay.
+
+        config LAB_A_PIN_ROOT
+            bool "Root AP (LAB_ROOT_AP_BSSID), direct baseline"
+
+        config LAB_A_PIN_NONE
+            bool "Any BSSID with the SSID"
+            help
+                Baseline without pinning: the STA joins whichever AP it finds first.
+    endchoice
+
+    config LAB_A_SCAN_INTERVAL_BASE_S
+        int "Reconnect scan interval base (s)"
+        range 1 60
+        default 2
+        help
+            mmwlan_sta_args.scan_interval_base_s. morselib waits base, base^2, ... seconds
+            between scans while (re)connecting, capped at the limit below.
+
+    config LAB_A_SCAN_INTERVAL_LIMIT_S
+        int "Reconnect scan interval limit (s)"
+        range 1 512
+        default 10
+        help
+            mmwlan_sta_args.scan_interval_limit_s. The SDK default is 512 s, which would leave
+            node A off the air for minutes after the relay restarts. The default matches the
+            relay STA's (LAB_STA_SCAN_INTERVAL_LIMIT_S in halow_lab_config.h).
+
+    config LAB_A_STOP_SERVICES_ON_LINK_DOWN
+        bool "Stop traffic services on link down"
+        default y
+        help
+            y: stop UDP, TCP and ping on link down and start them again (new sessions) once the
+            link is back. n: start them at the first link up and keep them running, so loss
+            and the TCP client's reconnect/backoff cover the whole outage.
+
+    config LAB_A_SERVICE_START_DELAY_MS
+        int "Delay from link up to starting services (ms)"
+        range 0 60000
+        default 1000
+
+    config LAB_A_HEALTH_INTERVAL_MS
+        int "Health line interval (ms)"
+        range 1000 3600000
+        default 10000
+
+    menu "UDP echo client"
+
+        config LAB_A_UDP_ECHO_NODE_B
+            bool "UDP echo to node B"
+            default y
+
+        config LAB_A_UDP_ECHO_RELAY
+            bool "UDP echo to the relay (flow udp_relay)"
+            default n
+            help
+                Needs a UDP echo server on the relay at LAB_IP_RELAY:LAB_UDP_ECHO_PORT.
+                Separates the A <-> relay hop from the full path.
+
+        config LAB_UDP_RATE_PPS
+            int "Datagrams per second"
+            range 1 10000
+            default 10
+
+        config LAB_UDP_PAYLOAD_LEN
+            int "Payload bytes (after the 32-byte header)"
+            range 0 1400
+            default 64
+
+    endmenu
+
+    menu "Throughput test client"
+
+        config LAB_A_TPUT
+            bool "Bulk throughput test to node B"
+            default n
+            help
+                Repeatedly send as fast as possible to node B's throughput sink (needs
+                CONFIG_LAB_B_TPUT_SERVER on node B): a TCP test, then a UDP test, each
+                LAB_A_TPUT_DURATION_MS long, with a pause after each. Node B's EVENT,tput_srv
+                ev=end lines are the result. Turn the other traffic off for a clean measurement.
+
+        config LAB_A_TPUT_DURATION_MS
+            int "Duration of each test (ms)"
+            range 1000 600000
+            default 20000
+            depends on LAB_A_TPUT
+
+        config LAB_A_TPUT_PAUSE_MS
+            int "Pause after each test (ms)"
+            range 0 600000
+            default 3000
+            depends on LAB_A_TPUT
+
+        config LAB_A_TPUT_UDP_LEN
+            int "UDP datagram payload bytes"
+            range 16 1472
+            default 1460
+            depends on LAB_A_TPUT
+
+        config LAB_A_TPUT_SERVER
+            bool "Throughput test sink (for node B's throughput client)"
+            default n
+            help
+                Count bulk TCP (port 5002) and UDP (port 5003) traffic from node B's throughput
+                client (CONFIG_LAB_B_TPUT_CLIENT) for the B -> A direction. Prints STATS,tput_srv
+                lines every second and an EVENT,tput_srv,ev=end line per test.
+
+    endmenu
+
+    menu "TCP message stream client"
+
+        config LAB_A_TCP_STREAM
+            bool "TCP message stream to node B"
+            default y
+
+        config LAB_TCP_RATE_MPS
+            int "Messages per second"
+            range 1 10000
+            default 5
+
+        config LAB_TCP_PAYLOAD_LEN
+            int "Message payload bytes"
+            range 0 1024
+            default 256
+
+        config LAB_A_TCP_ACK_TIMEOUT_MS
+            int "Stall timeout: oldest unACKed message age (ms)"
+            range 100 600000
+            default 5000
+
+        config LAB_A_TCP_CONNECT_TIMEOUT_MS
+            int "Connect timeout (ms)"
+            range 100 600000
+            default 5000
+
+        config LAB_A_TCP_BACKOFF_MIN_MS
+            int "Reconnect backoff minimum (ms)"
+            range 1 600000
+            default 500
+
+        config LAB_A_TCP_BACKOFF_MAX_MS
+            int "Reconnect backoff maximum (ms)"
+            range 1 600000
+            default 30000
+
+        config LAB_A_TCP_MAX_INFLIGHT
+            int "Maximum unACKed messages"
+            range 1 128
+            default 32
+
+    endmenu
+
+    menu "ICMP ping"
+
+        config LAB_A_PING_NODE_B
+            bool "Ping node B"
+            default y
+
+        config LAB_A_PING_RELAY
+            bool "Ping the relay"
+            default y
+            help
+                The relay answers from its STA MAC. Its own ARP requests only go upstream, so
+                without static ARP (below) this works only while the relay is linked to the root.
+
+        config LAB_PING_INTERVAL_MS
+            int "Interval (ms)"
+            range 10 60000
+            default 1000
+
+        config LAB_A_PING_TIMEOUT_MS
+            int "Reply timeout (ms)"
+            range 10 60000
+            default 1000
+
+        config LAB_A_PING_SIZE
+            int "ICMP data bytes"
+            range 0 1400
+            default 56
+
+        config LAB_A_PING_VERBOSE
+            bool "Print a PING line for every reply/timeout"
+            default y
+            help
+                n: print only the periodic summary lines.
+
+    endmenu
+
+    menu "Static ARP"
+        depends on LWIP_DHCPS_STATIC_ENTRIES
+
+        config LAB_A_STATIC_ARP_NODE_B_MAC
+            string "Node B MAC (empty = use ARP)"
+            default ""
+            help
+                Node B's HaLow MAC, as printed in its EVENT,node,...,ev=boot line.
+
+        config LAB_A_STATIC_ARP_RELAY_MAC
+            string "Relay MAC (empty = use ARP)"
+            default ""
+            help
+                The relay's device (STA) MAC, not the AP BSSID: the relay's IP stack is on its
+                STA interface. Lets A reach the relay while the relay has no uplink.
+
+    endmenu
+
+endmenu

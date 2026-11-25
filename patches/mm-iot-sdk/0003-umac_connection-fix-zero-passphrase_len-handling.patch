@@ -1,0 +1,50 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: siraisisatoru <37771374+siraisisatoru@users.noreply.github.com>
+Date: Tue, 3 Nov 2026 22:58:32 +1100
+Subject: [PATCH 3/3] umac_connection: derive a zero passphrase_len from the
+ passphrase
+
+struct mmwlan_sta_args documents that passphrase_len "may be zero if
+passphrase is null-terminated", and umac_connection_validate_sta_args()
+checks the passphrase that way. umac_connection_start(), however, sets
+the stored length from the SSID:
+
+    data->sta_args.passphrase_len = strlen((const char *)data->sta_args.ssid);
+
+The stored length is then used when the supplicant config is built
+(config_populate_network_security() copies exactly passphrase_len
+bytes into sae_password), so with MMWLAN_SAE and passphrase_len == 0:
+
+  - if the SSID is shorter than the passphrase, the SAE password is
+    silently truncated and authentication fails against a correctly
+    configured AP;
+  - if the SSID is longer, the copy includes the terminating NUL and
+    whatever follows it in the passphrase buffer;
+  - a 32 byte SSID has no terminator in mmwlan_sta_args.ssid, so the
+    strlen() itself reads beyond the array.
+
+In relay mode the effect also reaches the downstream BSS:
+umac_relay_start_relay_ap() copies sta_args.passphrase_len into the
+repeater's mmwlan_ap_args, so the repeater AP is brought up with the
+same wrong SAE password.
+
+Compute the length from the passphrase, bounded by
+MMWLAN_PASSPHRASE_MAXLEN as in umac_connection_validate_sta_args().
+---
+ framework/morselib/src/umac/connection/umac_connection.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/framework/morselib/src/umac/connection/umac_connection.c b/framework/morselib/src/umac/connection/umac_connection.c
+index a26fb9cc..62784405 100644
+--- a/framework/morselib/src/umac/connection/umac_connection.c
++++ b/framework/morselib/src/umac/connection/umac_connection.c
+@@ -362,7 +362,8 @@ enum mmwlan_status umac_connection_start(struct umac_data *umacd,
+     }
+     else
+     {
+-        data->sta_args.passphrase_len = strlen((const char *)data->sta_args.ssid);
++        data->sta_args.passphrase_len =
++            strnlen(data->sta_args.passphrase, MMWLAN_PASSPHRASE_MAXLEN);
+     }
+ 
+     if (args->extra_assoc_ies_len != 0 && extra_assoc_ies != NULL)

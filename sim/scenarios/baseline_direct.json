@@ -1,0 +1,53 @@
+{
+  "name": "baseline_direct",
+  "title": "A-B direct, one hop",
+  "description": "Reference: node A associated straight to node B (one hop, every frame takes airtime once). Same radio and traffic as relay_nominal.",
+  "topology": "direct",
+  "duration_s": 60,
+  "medium": {
+    "_comment": "S1G 2 MHz, 1 SS, MCS5, long GI: 5.2 Mbit/s PHY. frame_overhead_us = S1G short preamble 240 + SIFS 160 + NDP ACK 240 + AIFS[BE] 316 + mean backoff 7.5 slots x 52 = 390. mac_overhead_bytes = 4-address QoS MAC header 32 + LLC/SNAP 8 + CCMP 16 + FCS 4.",
+    "mcs": 5,
+    "bandwidth_mhz": 2,
+    "phy_rate_kbps": 5200,
+    "frame_overhead_us": 1350,
+    "mac_overhead_bytes": 60,
+    "queue_frames": 50
+  },
+  "hops": {
+    "a_b": {
+      "delay_ms": 2.0,
+      "jitter_ms": 0.5,
+      "loss_pct": 0.0
+    }
+  },
+  "relay_fwd_delay_ms": 1.0,
+  "root_drops_group_tx": true,
+  "node_a": {
+    "udp-rate-pps": 10,
+    "udp-payload-len": 64,
+    "tcp-rate-mps": 5,
+    "tcp-payload-len": 256
+  },
+  "ping": {
+    "interval_ms": 200,
+    "size": 56,
+    "targets": [
+      "node_b",
+      "relay"
+    ]
+  },
+  "expect": [
+    {
+      "metric": "flows.udp.loss_pct",
+      "max": 0.5
+    },
+    {
+      "metric": "flows.tcp.disconnects",
+      "max": 0
+    },
+    {
+      "metric": "flows.ping_node_b.loss_pct",
+      "max": 1.0
+    }
+  ]
+}

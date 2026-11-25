@@ -1,0 +1,14 @@
+[  0.000920] EVENT,netsim,t_ms=0,ev=setup,topology=relay,scenario=relay_saturation,comp_ms=0.349,air_overhead_bytes=924
+[  1.013505] EVENT,netsim,t_ms=1013,ev=sweep_step,param=udp-rate-pps,value=10,flow=sat_0010
+[ 12.054069] EVENT,netsim,t_ms=12054,ev=sweep_step,param=udp-rate-pps,value=20,flow=sat_0020
+[ 23.103820] EVENT,netsim,t_ms=23103,ev=sweep_step,param=udp-rate-pps,value=30,flow=sat_0030
+[ 34.163240] EVENT,netsim,t_ms=34163,ev=sweep_step,param=udp-rate-pps,value=40,flow=sat_0040
+[ 45.219807] EVENT,netsim,t_ms=45219,ev=sweep_step,param=udp-rate-pps,value=50,flow=sat_0050
+[ 56.275306] EVENT,netsim,t_ms=56275,ev=sweep_step,param=udp-rate-pps,value=60,flow=sat_0060
+[ 67.311320] EVENT,netsim,t_ms=67311,ev=sweep_step,param=udp-rate-pps,value=70,flow=sat_0070
+[ 78.362226] EVENT,netsim,t_ms=78362,ev=sweep_step,param=udp-rate-pps,value=80,flow=sat_0080
+[ 89.396298] EVENT,netsim,t_ms=89396,ev=sweep_step,param=udp-rate-pps,value=90,flow=sat_0090
+[100.432058] EVENT,netsim,t_ms=100432,ev=sweep_step,param=udp-rate-pps,value=100,flow=sat_0100
+[111.457778] EVENT,netsim,t_ms=111457,ev=sweep_step,param=udp-rate-pps,value=120,flow=sat_0120
+[122.514274] EVENT,netsim,t_ms=122514,ev=sweep_step,param=udp-rate-pps,value=140,flow=sat_0140
+[134.051565] EVENT,netsim,t_ms=134051,ev=end,air_sent_pkts=25744,air_dropped=1437,root_group_tx_dropped=0

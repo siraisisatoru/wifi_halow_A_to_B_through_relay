@@ -1,0 +1,2 @@
+[  0.001044] EVENT,netsim,t_ms=1,ev=setup,topology=direct,scenario=baseline_direct,comp_ms=0.397,air_overhead_bytes=924
+[ 63.554813] EVENT,netsim,t_ms=63554,ev=end,air_sent_pkts=2699,air_dropped=0,root_group_tx_dropped=0

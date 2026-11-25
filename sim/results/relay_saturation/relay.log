@@ -1,0 +1,6 @@
+[  0.003062] # relay: ip netns exec hlR /tmp/simbuild/relay_host --report-interval-ms 1000
+[  0.004942] EVENT,relay,t_ms=0,ev=boot,udp_port=5000
+[  0.005199] EVENT,udp_relay_srv,t_ms=0,ev=listening,proto=udp,port=5000
+[134.072399] EVENT,udp_relay_srv,t_ms=134067,ev=stopped
+[134.072620] EVENT,relay,t_ms=134067,ev=exit
+[134.120900] # relay: exit 0

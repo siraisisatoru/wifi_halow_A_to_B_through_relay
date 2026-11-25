@@ -1,0 +1,57 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: siraisisatoru <37771374+siraisisatoru@users.noreply.github.com>
+Date: Tue, 3 Nov 2026 22:57:35 +1100
+Subject: [PATCH 2/3] umac_relay: send a root's own unresolved frames on the AP
+ VIF
+
+umac_relay_update_tx_metadata() picks the VIF for every frame the host
+stack hands to mmwlan_tx_pkt() while relay mode is enabled. A frame
+goes to the AP VIF only if its DA is an associated station or is in the
+relay table; everything else, including every group addressed frame
+(broadcast ARP requests, DHCP, mDNS, IPv6 ND), is tagged for the STA
+VIF so a repeater sends it upstream.
+
+A relay root (depth 0, started with root_ap_args) has no STA interface.
+mmwlan_tx_pkt() then finds no STA VIF ID and drops the frame with
+MMWLAN_VIF_ERROR ("No matching VIF"), so the root cannot send a single
+broadcast. In particular it cannot ARP for any station, so IP traffic
+started by the root never works and stations only reach it while their
+own ARP entry for the root keeps it learned.
+
+On the root, send these frames on the AP VIF instead. Group addressed
+frames then use the BSS common STA record, as in plain AP mode. A
+unicast DA that is neither associated nor in the relay table is now
+dropped by the AP datapath ("No STA record", MMWLAN_NOT_FOUND) instead
+of failing VIF lookup; it was undeliverable either way.
+
+Repeaters are unchanged. A repeater's own group addressed frames still
+go only upstream. In the morselib RX path they still reach its own BSS:
+the parent AP retransmits them to its BSS (umac_relay_process_data_frame()
+forwards group addressed frames received on an AP VIF), and the repeater
+forwards that copy, received on its STA VIF, down its AP VIF while
+dropping it locally because the SA is its own. Also sending them
+directly on the repeater AP would give its own stations every frame
+twice.
+---
+ framework/morselib/src/umac/relay/umac_relay.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/framework/morselib/src/umac/relay/umac_relay.c b/framework/morselib/src/umac/relay/umac_relay.c
+index 37e9212c..5e1604d4 100644
+--- a/framework/morselib/src/umac/relay/umac_relay.c
++++ b/framework/morselib/src/umac/relay/umac_relay.c
+@@ -942,6 +942,14 @@ void umac_relay_update_tx_metadata(struct umac_data *umacd,
+         goto done;
+     }
+ 
++    /* The root has no upstream STA interface, so everything else (in particular group
++     * addressed frames) goes out on its AP. */
++    if (is_root(data))
++    {
++        metadata->vif = MMWLAN_VIF_AP;
++        goto done;
++    }
++
+     if (metadata->vif != MMWLAN_VIF_STA)
+     {
+         MMLOG_VRB("Rewriting VIF to TX packet via STA VIF\n");

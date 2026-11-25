@@ -1,0 +1,7 @@
+[submodule "third_party/mm-iot-sdk"]
+	path = third_party/mm-iot-sdk
+	url = https://github.com/MorseMicro/mm-iot-sdk.git
+[submodule "third_party/esp-halow"]
+	path = third_party/esp-halow
+	url = https://github.com/siraisisatoru/esp-halow.git
+	branch = sdk-2.14.3-idf6

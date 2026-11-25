@@ -1,0 +1,25 @@
+# Build outputs
+build/
+build_*/
+relay_ekh05/build*/
+node_a/build/
+node_b/build/
+sdkconfig
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+
+# Hardware run captures (docs/bringup.md)
+logs/
+bringup/
+
+# Local lab settings: SSID, passphrase, board BSSIDs (see lab_local.conf.example)
+lab_local.conf

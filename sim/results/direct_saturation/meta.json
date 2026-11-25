@@ -1,0 +1,98 @@
+{
+  "scenario": {
+    "name": "direct_saturation",
+    "title": "A-B direct, UDP echo rate sweep",
+    "description": "Same sweep with node A straight to node B, to compare capacity with relay_saturation (expected about 2x).",
+    "topology": "direct",
+    "duration_s": 60,
+    "medium": {
+      "_comment": "S1G 2 MHz, 1 SS, MCS5, long GI: 5.2 Mbit/s PHY. frame_overhead_us = S1G short preamble 240 + SIFS 160 + NDP ACK 240 + AIFS[BE] 316 + mean backoff 7.5 slots x 52 = 390. mac_overhead_bytes = 4-address QoS MAC header 32 + LLC/SNAP 8 + CCMP 16 + FCS 4.",
+      "mcs": 5,
+      "bandwidth_mhz": 2,
+      "phy_rate_kbps": 5200,
+      "frame_overhead_us": 1350,
+      "mac_overhead_bytes": 60,
+      "queue_frames": 50
+    },
+    "hops": {
+      "a_b": {
+        "delay_ms": 2.0,
+        "jitter_ms": 0.5,
+        "loss_pct": 0.0
+      }
+    },
+    "relay_fwd_delay_ms": 1.0,
+    "root_drops_group_tx": true,
+    "node_a": {
+      "udp-rate-pps": 10,
+      "udp-payload-len": 64,
+      "tcp-rate-mps": 5,
+      "tcp-payload-len": 256
+    },
+    "ping": {
+      "interval_ms": 200,
+      "size": 56,
+      "targets": [
+        "node_b",
+        "relay"
+      ]
+    },
+    "sweep": {
+      "param": "udp-rate-pps",
+      "values": [
+        20,
+        40,
+        60,
+        80,
+        100,
+        120,
+        140,
+        160,
+        180,
+        200,
+        240,
+        280
+      ],
+      "step_s": 8,
+      "gap_s": 2,
+      "flow_prefix": "sat",
+      "fixed": {
+        "udp-payload-len": 1000,
+        "tcp": 0,
+        "relay-echo": 0,
+        "udp-drain-ms": 1000
+      }
+    },
+    "expect": [
+      {
+        "metric": "sweep.first_loss_pct",
+        "max": 1.0
+      },
+      {
+        "metric": "sweep.last_loss_pct",
+        "min": 5.0
+      },
+      {
+        "metric": "sweep.knee_over_model",
+        "min": 0.75,
+        "max": 1.25
+      }
+    ]
+  },
+  "clock": {
+    "t0_mono": 260.643480077,
+    "t0_real": 1793712274.718134
+  },
+  "timer_comp_ms": 0.3490000000000002,
+  "air_overhead_bytes": 924,
+  "air_counters": {
+    "sent_pkts": 23316,
+    "sent_bytes": 23908328,
+    "dropped": 2773,
+    "overlimits": 0
+  },
+  "root_group_tx_dropped": 0,
+  "root_group_selftest_dropped": 1,
+  "pcap": "/tmp/sim_direct_saturation.pcap",
+  "kernel": "7.0.12-linuxkit"
+}

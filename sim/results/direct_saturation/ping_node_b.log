@@ -1,0 +1,712 @@
+[  1.012205] # ping_node_b: ip netns exec hlA ping -n -O -i 0.2 -s 56 -W 2 -w 174 192.168.50.1
+[  1.030821] PING 192.168.50.1 (192.168.50.1) 56(84) bytes of data.
+[  1.030930] 64 bytes from 192.168.50.1: icmp_seq=1 ttl=64 time=15.0 ms
+[  1.231410] 64 bytes from 192.168.50.1: icmp_seq=2 ttl=64 time=10.2 ms
+[  1.430475] 64 bytes from 192.168.50.1: icmp_seq=3 ttl=64 time=8.34 ms
+[  1.634984] 64 bytes from 192.168.50.1: icmp_seq=4 ttl=64 time=7.53 ms
+[  1.841980] 64 bytes from 192.168.50.1: icmp_seq=5 ttl=64 time=8.59 ms
+[  2.045637] 64 bytes from 192.168.50.1: icmp_seq=6 ttl=64 time=7.89 ms
+[  2.248366] 64 bytes from 192.168.50.1: icmp_seq=7 ttl=64 time=8.82 ms
+[  2.450573] 64 bytes from 192.168.50.1: icmp_seq=8 ttl=64 time=7.99 ms
+[  2.655085] 64 bytes from 192.168.50.1: icmp_seq=9 ttl=64 time=10.9 ms
+[  2.855464] 64 bytes from 192.168.50.1: icmp_seq=10 ttl=64 time=7.58 ms
+[  3.059889] 64 bytes from 192.168.50.1: icmp_seq=11 ttl=64 time=7.19 ms
+[  3.266285] 64 bytes from 192.168.50.1: icmp_seq=12 ttl=64 time=8.01 ms
+[  3.468037] 64 bytes from 192.168.50.1: icmp_seq=13 ttl=64 time=7.23 ms
+[  3.673547] 64 bytes from 192.168.50.1: icmp_seq=14 ttl=64 time=7.83 ms
+[  3.880692] 64 bytes from 192.168.50.1: icmp_seq=15 ttl=64 time=8.77 ms
+[  4.085518] 64 bytes from 192.168.50.1: icmp_seq=16 ttl=64 time=8.19 ms
+[  4.288483] 64 bytes from 192.168.50.1: icmp_seq=17 ttl=64 time=7.20 ms
+[  4.492841] 64 bytes from 192.168.50.1: icmp_seq=18 ttl=64 time=7.86 ms
+[  4.697034] 64 bytes from 192.168.50.1: icmp_seq=19 ttl=64 time=7.55 ms
+[  4.904341] 64 bytes from 192.168.50.1: icmp_seq=20 ttl=64 time=10.2 ms
+[  5.106745] 64 bytes from 192.168.50.1: icmp_seq=21 ttl=64 time=7.14 ms
+[  5.310480] 64 bytes from 192.168.50.1: icmp_seq=22 ttl=64 time=8.02 ms
+[  5.514745] 64 bytes from 192.168.50.1: icmp_seq=23 ttl=64 time=7.69 ms
+[  5.718433] 64 bytes from 192.168.50.1: icmp_seq=24 ttl=64 time=7.85 ms
+[  5.920896] 64 bytes from 192.168.50.1: icmp_seq=25 ttl=64 time=7.87 ms
+[  6.125922] 64 bytes from 192.168.50.1: icmp_seq=26 ttl=64 time=10.3 ms
+[  6.328958] 64 bytes from 192.168.50.1: icmp_seq=27 ttl=64 time=9.32 ms
+[  6.530164] 64 bytes from 192.168.50.1: icmp_seq=28 ttl=64 time=8.22 ms
+[  6.731560] 64 bytes from 192.168.50.1: icmp_seq=29 ttl=64 time=8.41 ms
+[  6.932418] 64 bytes from 192.168.50.1: icmp_seq=30 ttl=64 time=8.04 ms
+[  7.136110] 64 bytes from 192.168.50.1: icmp_seq=31 ttl=64 time=8.58 ms
+[  7.341284] 64 bytes from 192.168.50.1: icmp_seq=32 ttl=64 time=8.92 ms
+[  7.545440] 64 bytes from 192.168.50.1: icmp_seq=33 ttl=64 time=7.66 ms
+[  7.747237] 64 bytes from 192.168.50.1: icmp_seq=34 ttl=64 time=7.05 ms
+[  7.954200] 64 bytes from 192.168.50.1: icmp_seq=35 ttl=64 time=8.60 ms
+[  8.160118] 64 bytes from 192.168.50.1: icmp_seq=36 ttl=64 time=8.51 ms
+[  8.364404] 64 bytes from 192.168.50.1: icmp_seq=37 ttl=64 time=8.21 ms
+[  8.568675] 64 bytes from 192.168.50.1: icmp_seq=38 ttl=64 time=7.93 ms
+[  8.775766] 64 bytes from 192.168.50.1: icmp_seq=39 ttl=64 time=9.67 ms
+[  8.979354] 64 bytes from 192.168.50.1: icmp_seq=40 ttl=64 time=10.2 ms
+[  9.179365] 64 bytes from 192.168.50.1: icmp_seq=41 ttl=64 time=7.67 ms
+[  9.384611] 64 bytes from 192.168.50.1: icmp_seq=42 ttl=64 time=7.54 ms
+[  9.590280] 64 bytes from 192.168.50.1: icmp_seq=43 ttl=64 time=7.41 ms
+[  9.795917] 64 bytes from 192.168.50.1: icmp_seq=44 ttl=64 time=7.21 ms
+[ 10.002059] 64 bytes from 192.168.50.1: icmp_seq=45 ttl=64 time=8.00 ms
+[ 10.204301] 64 bytes from 192.168.50.1: icmp_seq=46 ttl=64 time=9.33 ms
+[ 10.405888] 64 bytes from 192.168.50.1: icmp_seq=47 ttl=64 time=7.19 ms
+[ 10.610764] 64 bytes from 192.168.50.1: icmp_seq=48 ttl=64 time=8.39 ms
+[ 10.814911] 64 bytes from 192.168.50.1: icmp_seq=49 ttl=64 time=7.34 ms
+[ 11.015115] 64 bytes from 192.168.50.1: icmp_seq=50 ttl=64 time=7.09 ms
+[ 11.218973] 64 bytes from 192.168.50.1: icmp_seq=51 ttl=64 time=8.46 ms
+[ 11.424081] 64 bytes from 192.168.50.1: icmp_seq=52 ttl=64 time=8.35 ms
+[ 11.625150] 64 bytes from 192.168.50.1: icmp_seq=53 ttl=64 time=8.36 ms
+[ 11.825107] 64 bytes from 192.168.50.1: icmp_seq=54 ttl=64 time=7.34 ms
+[ 12.026563] 64 bytes from 192.168.50.1: icmp_seq=55 ttl=64 time=7.89 ms
+[ 12.230666] 64 bytes from 192.168.50.1: icmp_seq=56 ttl=64 time=7.49 ms
+[ 12.432046] 64 bytes from 192.168.50.1: icmp_seq=57 ttl=64 time=7.15 ms
+[ 12.636696] 64 bytes from 192.168.50.1: icmp_seq=58 ttl=64 time=8.11 ms
+[ 12.841941] 64 bytes from 192.168.50.1: icmp_seq=59 ttl=64 time=10.1 ms
+[ 13.043909] 64 bytes from 192.168.50.1: icmp_seq=60 ttl=64 time=8.63 ms
+[ 13.248995] 64 bytes from 192.168.50.1: icmp_seq=61 ttl=64 time=9.21 ms
+[ 13.450813] 64 bytes from 192.168.50.1: icmp_seq=62 ttl=64 time=8.62 ms
+[ 13.650628] 64 bytes from 192.168.50.1: icmp_seq=63 ttl=64 time=6.90 ms
+[ 13.855273] 64 bytes from 192.168.50.1: icmp_seq=64 ttl=64 time=7.12 ms
+[ 14.061898] 64 bytes from 192.168.50.1: icmp_seq=65 ttl=64 time=8.29 ms
+[ 14.268114] 64 bytes from 192.168.50.1: icmp_seq=66 ttl=64 time=12.9 ms
+[ 14.466827] 64 bytes from 192.168.50.1: icmp_seq=67 ttl=64 time=10.2 ms
+[ 14.670969] 64 bytes from 192.168.50.1: icmp_seq=68 ttl=64 time=10.3 ms
+[ 14.870820] 64 bytes from 192.168.50.1: icmp_seq=69 ttl=64 time=9.21 ms
+[ 15.071005] 64 bytes from 192.168.50.1: icmp_seq=70 ttl=64 time=8.37 ms
+[ 15.272044] 64 bytes from 192.168.50.1: icmp_seq=71 ttl=64 time=7.55 ms
+[ 15.476603] 64 bytes from 192.168.50.1: icmp_seq=72 ttl=64 time=9.71 ms
+[ 15.676766] 64 bytes from 192.168.50.1: icmp_seq=73 ttl=64 time=6.92 ms
+[ 15.882350] 64 bytes from 192.168.50.1: icmp_seq=74 ttl=64 time=7.22 ms
+[ 16.084838] 64 bytes from 192.168.50.1: icmp_seq=75 ttl=64 time=8.34 ms
+[ 16.288232] 64 bytes from 192.168.50.1: icmp_seq=76 ttl=64 time=8.33 ms
+[ 16.491350] 64 bytes from 192.168.50.1: icmp_seq=77 ttl=64 time=10.6 ms
+[ 16.692612] 64 bytes from 192.168.50.1: icmp_seq=78 ttl=64 time=8.00 ms
+[ 16.898003] 64 bytes from 192.168.50.1: icmp_seq=79 ttl=64 time=8.16 ms
+[ 17.098760] 64 bytes from 192.168.50.1: icmp_seq=80 ttl=64 time=7.25 ms
+[ 17.304957] 64 bytes from 192.168.50.1: icmp_seq=81 ttl=64 time=9.63 ms
+[ 17.506885] 64 bytes from 192.168.50.1: icmp_seq=82 ttl=64 time=7.67 ms
+[ 17.713776] 64 bytes from 192.168.50.1: icmp_seq=83 ttl=64 time=9.29 ms
+[ 17.919041] 64 bytes from 192.168.50.1: icmp_seq=84 ttl=64 time=9.22 ms
+[ 18.119993] 64 bytes from 192.168.50.1: icmp_seq=85 ttl=64 time=7.26 ms
+[ 18.322717] 64 bytes from 192.168.50.1: icmp_seq=86 ttl=64 time=7.83 ms
+[ 18.528432] 64 bytes from 192.168.50.1: icmp_seq=87 ttl=64 time=7.63 ms
+[ 18.730439] 64 bytes from 192.168.50.1: icmp_seq=88 ttl=64 time=7.33 ms
+[ 18.934184] 64 bytes from 192.168.50.1: icmp_seq=89 ttl=64 time=8.13 ms
+[ 19.135580] 64 bytes from 192.168.50.1: icmp_seq=90 ttl=64 time=8.43 ms
+[ 19.342211] 64 bytes from 192.168.50.1: icmp_seq=91 ttl=64 time=10.7 ms
+[ 19.542326] 64 bytes from 192.168.50.1: icmp_seq=92 ttl=64 time=7.69 ms
+[ 19.748798] 64 bytes from 192.168.50.1: icmp_seq=93 ttl=64 time=9.01 ms
+[ 19.951233] 64 bytes from 192.168.50.1: icmp_seq=94 ttl=64 time=7.43 ms
+[ 20.155552] 64 bytes from 192.168.50.1: icmp_seq=95 ttl=64 time=7.32 ms
+[ 20.361836] 64 bytes from 192.168.50.1: icmp_seq=96 ttl=64 time=7.89 ms
+[ 20.567950] 64 bytes from 192.168.50.1: icmp_seq=97 ttl=64 time=9.96 ms
+[ 20.772680] 64 bytes from 192.168.50.1: icmp_seq=98 ttl=64 time=10.6 ms
+[ 20.977119] 64 bytes from 192.168.50.1: icmp_seq=99 ttl=64 time=8.95 ms
+[ 21.180975] 64 bytes from 192.168.50.1: icmp_seq=100 ttl=64 time=7.85 ms
+[ 21.385294] 64 bytes from 192.168.50.1: icmp_seq=101 ttl=64 time=8.29 ms
+[ 21.590588] 64 bytes from 192.168.50.1: icmp_seq=102 ttl=64 time=7.91 ms
+[ 21.797174] 64 bytes from 192.168.50.1: icmp_seq=103 ttl=64 time=8.20 ms
+[ 22.002300] 64 bytes from 192.168.50.1: icmp_seq=104 ttl=64 time=7.67 ms
+[ 22.208137] 64 bytes from 192.168.50.1: icmp_seq=105 ttl=64 time=7.53 ms
+[ 22.415248] 64 bytes from 192.168.50.1: icmp_seq=106 ttl=64 time=8.78 ms
+[ 22.617955] 64 bytes from 192.168.50.1: icmp_seq=107 ttl=64 time=7.66 ms
+[ 22.822444] 64 bytes from 192.168.50.1: icmp_seq=108 ttl=64 time=7.49 ms
+[ 23.023642] 64 bytes from 192.168.50.1: icmp_seq=109 ttl=64 time=7.89 ms
+[ 23.231042] 64 bytes from 192.168.50.1: icmp_seq=110 ttl=64 time=12.2 ms
+[ 23.434141] 64 bytes from 192.168.50.1: icmp_seq=111 ttl=64 time=10.9 ms
+[ 23.636567] 64 bytes from 192.168.50.1: icmp_seq=112 ttl=64 time=8.83 ms
+[ 23.838736] 64 bytes from 192.168.50.1: icmp_seq=113 ttl=64 time=7.72 ms
+[ 24.048202] 64 bytes from 192.168.50.1: icmp_seq=114 ttl=64 time=12.6 ms
+[ 24.248606] 64 bytes from 192.168.50.1: icmp_seq=115 ttl=64 time=12.0 ms
+[ 24.447656] 64 bytes from 192.168.50.1: icmp_seq=116 ttl=64 time=8.78 ms
+[ 24.651128] 64 bytes from 192.168.50.1: icmp_seq=117 ttl=64 time=9.83 ms
+[ 24.858300] 64 bytes from 192.168.50.1: icmp_seq=118 ttl=64 time=10.9 ms
+[ 25.063319] 64 bytes from 192.168.50.1: icmp_seq=119 ttl=64 time=10.3 ms
+[ 25.267985] 64 bytes from 192.168.50.1: icmp_seq=120 ttl=64 time=10.5 ms
+[ 25.467224] 64 bytes from 192.168.50.1: icmp_seq=121 ttl=64 time=7.07 ms
+[ 25.673097] 64 bytes from 192.168.50.1: icmp_seq=122 ttl=64 time=7.54 ms
+[ 25.875814] 64 bytes from 192.168.50.1: icmp_seq=123 ttl=64 time=8.49 ms
+[ 26.081965] 64 bytes from 192.168.50.1: icmp_seq=124 ttl=64 time=12.6 ms
+[ 26.279888] 64 bytes from 192.168.50.1: icmp_seq=125 ttl=64 time=8.97 ms
+[ 26.481335] 64 bytes from 192.168.50.1: icmp_seq=126 ttl=64 time=8.34 ms
+[ 26.682858] 64 bytes from 192.168.50.1: icmp_seq=127 ttl=64 time=7.96 ms
+[ 26.885781] 64 bytes from 192.168.50.1: icmp_seq=128 ttl=64 time=10.4 ms
+[ 27.084826] 64 bytes from 192.168.50.1: icmp_seq=129 ttl=64 time=8.41 ms
+[ 27.291073] 64 bytes from 192.168.50.1: icmp_seq=130 ttl=64 time=9.60 ms
+[ 27.497512] 64 bytes from 192.168.50.1: icmp_seq=131 ttl=64 time=10.1 ms
+[ 27.699726] 64 bytes from 192.168.50.1: icmp_seq=132 ttl=64 time=8.88 ms
+[ 27.902779] 64 bytes from 192.168.50.1: icmp_seq=133 ttl=64 time=8.84 ms
+[ 28.104182] 64 bytes from 192.168.50.1: icmp_seq=134 ttl=64 time=7.70 ms
+[ 28.305735] 64 bytes from 192.168.50.1: icmp_seq=135 ttl=64 time=7.68 ms
+[ 28.509302] 64 bytes from 192.168.50.1: icmp_seq=136 ttl=64 time=8.49 ms
+[ 28.716037] 64 bytes from 192.168.50.1: icmp_seq=137 ttl=64 time=9.43 ms
+[ 28.916220] 64 bytes from 192.168.50.1: icmp_seq=138 ttl=64 time=8.76 ms
+[ 29.120810] 64 bytes from 192.168.50.1: icmp_seq=139 ttl=64 time=7.29 ms
+[ 29.325300] 64 bytes from 192.168.50.1: icmp_seq=140 ttl=64 time=10.3 ms
+[ 29.531341] 64 bytes from 192.168.50.1: icmp_seq=141 ttl=64 time=12.8 ms
+[ 29.731276] 64 bytes from 192.168.50.1: icmp_seq=142 ttl=64 time=8.14 ms
+[ 29.932585] 64 bytes from 192.168.50.1: icmp_seq=143 ttl=64 time=8.20 ms
+[ 30.135592] 64 bytes from 192.168.50.1: icmp_seq=144 ttl=64 time=10.9 ms
+[ 30.334129] 64 bytes from 192.168.50.1: icmp_seq=145 ttl=64 time=7.94 ms
+[ 30.534987] 64 bytes from 192.168.50.1: icmp_seq=146 ttl=64 time=8.06 ms
+[ 30.741016] 64 bytes from 192.168.50.1: icmp_seq=147 ttl=64 time=9.50 ms
+[ 30.946226] 64 bytes from 192.168.50.1: icmp_seq=148 ttl=64 time=8.87 ms
+[ 31.152711] 64 bytes from 192.168.50.1: icmp_seq=149 ttl=64 time=9.26 ms
+[ 31.358239] 64 bytes from 192.168.50.1: icmp_seq=150 ttl=64 time=10.6 ms
+[ 31.560092] 64 bytes from 192.168.50.1: icmp_seq=151 ttl=64 time=7.54 ms
+[ 31.764792] 64 bytes from 192.168.50.1: icmp_seq=152 ttl=64 time=8.28 ms
+[ 31.969731] 64 bytes from 192.168.50.1: icmp_seq=153 ttl=64 time=7.49 ms
+[ 32.172123] 64 bytes from 192.168.50.1: icmp_seq=154 ttl=64 time=7.40 ms
+[ 32.373797] 64 bytes from 192.168.50.1: icmp_seq=155 ttl=64 time=6.85 ms
+[ 32.580585] 64 bytes from 192.168.50.1: icmp_seq=156 ttl=64 time=7.48 ms
+[ 32.786373] 64 bytes from 192.168.50.1: icmp_seq=157 ttl=64 time=7.42 ms
+[ 32.989341] 64 bytes from 192.168.50.1: icmp_seq=158 ttl=64 time=8.57 ms
+[ 33.194362] 64 bytes from 192.168.50.1: icmp_seq=159 ttl=64 time=9.18 ms
+[ 33.392948] 64 bytes from 192.168.50.1: icmp_seq=160 ttl=64 time=7.15 ms
+[ 33.599001] 64 bytes from 192.168.50.1: icmp_seq=161 ttl=64 time=8.03 ms
+[ 33.799803] 64 bytes from 192.168.50.1: icmp_seq=162 ttl=64 time=7.58 ms
+[ 34.004676] 64 bytes from 192.168.50.1: icmp_seq=163 ttl=64 time=7.54 ms
+[ 34.211165] 64 bytes from 192.168.50.1: icmp_seq=164 ttl=64 time=11.6 ms
+[ 34.411400] 64 bytes from 192.168.50.1: icmp_seq=165 ttl=64 time=10.5 ms
+[ 34.614061] 64 bytes from 192.168.50.1: icmp_seq=166 ttl=64 time=8.62 ms
+[ 34.818917] 64 bytes from 192.168.50.1: icmp_seq=167 ttl=64 time=11.5 ms
+[ 35.022989] 64 bytes from 192.168.50.1: icmp_seq=168 ttl=64 time=10.8 ms
+[ 35.223895] 64 bytes from 192.168.50.1: icmp_seq=169 ttl=64 time=9.17 ms
+[ 35.430617] 64 bytes from 192.168.50.1: icmp_seq=170 ttl=64 time=11.8 ms
+[ 35.636888] 64 bytes from 192.168.50.1: icmp_seq=171 ttl=64 time=12.0 ms
+[ 35.836103] 64 bytes from 192.168.50.1: icmp_seq=172 ttl=64 time=10.7 ms
+[ 36.044465] 64 bytes from 192.168.50.1: icmp_seq=173 ttl=64 time=11.8 ms
+[ 36.244156] 64 bytes from 192.168.50.1: icmp_seq=174 ttl=64 time=8.52 ms
+[ 36.445724] 64 bytes from 192.168.50.1: icmp_seq=175 ttl=64 time=8.64 ms
+[ 36.650815] 64 bytes from 192.168.50.1: icmp_seq=176 ttl=64 time=7.89 ms
+[ 36.856210] 64 bytes from 192.168.50.1: icmp_seq=177 ttl=64 time=8.12 ms
+[ 37.061693] 64 bytes from 192.168.50.1: icmp_seq=178 ttl=64 time=8.20 ms
+[ 37.269311] 64 bytes from 192.168.50.1: icmp_seq=179 ttl=64 time=11.6 ms
+[ 37.475633] 64 bytes from 192.168.50.1: icmp_seq=180 ttl=64 time=12.0 ms
+[ 37.674548] 64 bytes from 192.168.50.1: icmp_seq=181 ttl=64 time=9.80 ms
+[ 37.880835] 64 bytes from 192.168.50.1: icmp_seq=182 ttl=64 time=9.94 ms
+[ 38.086975] 64 bytes from 192.168.50.1: icmp_seq=183 ttl=64 time=10.8 ms
+[ 38.290056] 64 bytes from 192.168.50.1: icmp_seq=184 ttl=64 time=7.79 ms
+[ 38.494880] 64 bytes from 192.168.50.1: icmp_seq=185 ttl=64 time=8.50 ms
+[ 38.698325] 64 bytes from 192.168.50.1: icmp_seq=186 ttl=64 time=8.48 ms
+[ 38.902485] 64 bytes from 192.168.50.1: icmp_seq=187 ttl=64 time=8.40 ms
+[ 39.106413] 64 bytes from 192.168.50.1: icmp_seq=188 ttl=64 time=9.78 ms
+[ 39.308271] 64 bytes from 192.168.50.1: icmp_seq=189 ttl=64 time=9.45 ms
+[ 39.513296] 64 bytes from 192.168.50.1: icmp_seq=190 ttl=64 time=8.62 ms
+[ 39.713734] 64 bytes from 192.168.50.1: icmp_seq=191 ttl=64 time=7.95 ms
+[ 39.915351] 64 bytes from 192.168.50.1: icmp_seq=192 ttl=64 time=9.33 ms
+[ 40.118901] 64 bytes from 192.168.50.1: icmp_seq=193 ttl=64 time=12.0 ms
+[ 40.316748] 64 bytes from 192.168.50.1: icmp_seq=194 ttl=64 time=9.43 ms
+[ 40.515519] 64 bytes from 192.168.50.1: icmp_seq=195 ttl=64 time=7.53 ms
+[ 40.718669] 64 bytes from 192.168.50.1: icmp_seq=196 ttl=64 time=9.28 ms
+[ 40.918608] 64 bytes from 192.168.50.1: icmp_seq=197 ttl=64 time=7.81 ms
+[ 41.120952] 64 bytes from 192.168.50.1: icmp_seq=198 ttl=64 time=8.70 ms
+[ 41.323474] 64 bytes from 192.168.50.1: icmp_seq=199 ttl=64 time=9.43 ms
+[ 41.524551] 64 bytes from 192.168.50.1: icmp_seq=200 ttl=64 time=8.46 ms
+[ 41.726673] 64 bytes from 192.168.50.1: icmp_seq=201 ttl=64 time=8.38 ms
+[ 41.927272] 64 bytes from 192.168.50.1: icmp_seq=202 ttl=64 time=8.19 ms
+[ 42.130863] 64 bytes from 192.168.50.1: icmp_seq=203 ttl=64 time=11.0 ms
+[ 42.335197] 64 bytes from 192.168.50.1: icmp_seq=204 ttl=64 time=9.97 ms
+[ 42.536134] 64 bytes from 192.168.50.1: icmp_seq=205 ttl=64 time=8.71 ms
+[ 42.742595] 64 bytes from 192.168.50.1: icmp_seq=206 ttl=64 time=11.1 ms
+[ 42.942482] 64 bytes from 192.168.50.1: icmp_seq=207 ttl=64 time=7.32 ms
+[ 43.147308] 64 bytes from 192.168.50.1: icmp_seq=208 ttl=64 time=7.57 ms
+[ 43.353291] 64 bytes from 192.168.50.1: icmp_seq=209 ttl=64 time=9.72 ms
+[ 43.559440] 64 bytes from 192.168.50.1: icmp_seq=210 ttl=64 time=9.76 ms
+[ 43.764643] 64 bytes from 192.168.50.1: icmp_seq=211 ttl=64 time=8.78 ms
+[ 43.969312] 64 bytes from 192.168.50.1: icmp_seq=212 ttl=64 time=7.99 ms
+[ 44.171935] 64 bytes from 192.168.50.1: icmp_seq=213 ttl=64 time=8.11 ms
+[ 44.371978] 64 bytes from 192.168.50.1: icmp_seq=214 ttl=64 time=7.24 ms
+[ 44.579585] 64 bytes from 192.168.50.1: icmp_seq=215 ttl=64 time=9.11 ms
+[ 44.781988] 64 bytes from 192.168.50.1: icmp_seq=216 ttl=64 time=8.91 ms
+[ 44.984641] 64 bytes from 192.168.50.1: icmp_seq=217 ttl=64 time=7.77 ms
+[ 45.189235] 64 bytes from 192.168.50.1: icmp_seq=218 ttl=64 time=8.30 ms
+[ 45.394349] 64 bytes from 192.168.50.1: icmp_seq=219 ttl=64 time=12.5 ms
+[ 45.596693] 64 bytes from 192.168.50.1: icmp_seq=220 ttl=64 time=13.6 ms
+[ 45.796101] 64 bytes from 192.168.50.1: icmp_seq=221 ttl=64 time=11.7 ms
+[ 45.994388] 64 bytes from 192.168.50.1: icmp_seq=222 ttl=64 time=8.70 ms
+[ 46.195637] 64 bytes from 192.168.50.1: icmp_seq=223 ttl=64 time=8.26 ms
+[ 46.399817] 64 bytes from 192.168.50.1: icmp_seq=224 ttl=64 time=11.0 ms
+[ 46.600580] 64 bytes from 192.168.50.1: icmp_seq=225 ttl=64 time=10.9 ms
+[ 46.798372] 64 bytes from 192.168.50.1: icmp_seq=226 ttl=64 time=7.79 ms
+[ 47.005889] 64 bytes from 192.168.50.1: icmp_seq=227 ttl=64 time=14.2 ms
+[ 47.200511] 64 bytes from 192.168.50.1: icmp_seq=228 ttl=64 time=8.06 ms
+[ 47.404207] 64 bytes from 192.168.50.1: icmp_seq=229 ttl=64 time=11.4 ms
+[ 47.604047] 64 bytes from 192.168.50.1: icmp_seq=230 ttl=64 time=9.71 ms
+[ 47.807451] 64 bytes from 192.168.50.1: icmp_seq=231 ttl=64 time=11.6 ms
+[ 48.005169] 64 bytes from 192.168.50.1: icmp_seq=232 ttl=64 time=8.27 ms
+[ 48.210326] 64 bytes from 192.168.50.1: icmp_seq=233 ttl=64 time=12.5 ms
+[ 48.414391] 64 bytes from 192.168.50.1: icmp_seq=234 ttl=64 time=11.0 ms
+[ 48.615579] 64 bytes from 192.168.50.1: icmp_seq=235 ttl=64 time=11.5 ms
+[ 48.814277] 64 bytes from 192.168.50.1: icmp_seq=236 ttl=64 time=7.96 ms
+[ 49.014974] 64 bytes from 192.168.50.1: icmp_seq=237 ttl=64 time=8.02 ms
+[ 49.219080] 64 bytes from 192.168.50.1: icmp_seq=238 ttl=64 time=11.4 ms
+[ 49.425041] 64 bytes from 192.168.50.1: icmp_seq=239 ttl=64 time=12.1 ms
+[ 49.623668] 64 bytes from 192.168.50.1: icmp_seq=240 ttl=64 time=9.88 ms
+[ 49.829049] 64 bytes from 192.168.50.1: icmp_seq=241 ttl=64 time=11.0 ms
+[ 50.029468] 64 bytes from 192.168.50.1: icmp_seq=242 ttl=64 time=8.01 ms
+[ 50.234335] 64 bytes from 192.168.50.1: icmp_seq=243 ttl=64 time=11.6 ms
+[ 50.435817] 64 bytes from 192.168.50.1: icmp_seq=244 ttl=64 time=7.91 ms
+[ 50.639336] 64 bytes from 192.168.50.1: icmp_seq=245 ttl=64 time=8.08 ms
+[ 50.841256] 64 bytes from 192.168.50.1: icmp_seq=246 ttl=64 time=8.93 ms
+[ 51.044799] 64 bytes from 192.168.50.1: icmp_seq=247 ttl=64 time=9.87 ms
+[ 51.245471] 64 bytes from 192.168.50.1: icmp_seq=248 ttl=64 time=8.51 ms
+[ 51.450140] 64 bytes from 192.168.50.1: icmp_seq=249 ttl=64 time=10.6 ms
+[ 51.649862] 64 bytes from 192.168.50.1: icmp_seq=250 ttl=64 time=8.93 ms
+[ 51.854632] 64 bytes from 192.168.50.1: icmp_seq=251 ttl=64 time=8.44 ms
+[ 52.055946] 64 bytes from 192.168.50.1: icmp_seq=252 ttl=64 time=8.51 ms
+[ 52.259545] 64 bytes from 192.168.50.1: icmp_seq=253 ttl=64 time=11.2 ms
+[ 52.459150] 64 bytes from 192.168.50.1: icmp_seq=254 ttl=64 time=10.1 ms
+[ 52.659819] 64 bytes from 192.168.50.1: icmp_seq=255 ttl=64 time=9.47 ms
+[ 52.861269] 64 bytes from 192.168.50.1: icmp_seq=256 ttl=64 time=9.62 ms
+[ 53.065812] 64 bytes from 192.168.50.1: icmp_seq=257 ttl=64 time=13.2 ms
+[ 53.264862] 64 bytes from 192.168.50.1: icmp_seq=258 ttl=64 time=8.66 ms
+[ 53.470023] 64 bytes from 192.168.50.1: icmp_seq=259 ttl=64 time=7.80 ms
+[ 53.675932] 64 bytes from 192.168.50.1: icmp_seq=260 ttl=64 time=7.88 ms
+[ 53.880303] 64 bytes from 192.168.50.1: icmp_seq=261 ttl=64 time=7.47 ms
+[ 54.085660] 64 bytes from 192.168.50.1: icmp_seq=262 ttl=64 time=7.00 ms
+[ 54.289633] 64 bytes from 192.168.50.1: icmp_seq=263 ttl=64 time=8.32 ms
+[ 54.495202] 64 bytes from 192.168.50.1: icmp_seq=264 ttl=64 time=8.12 ms
+[ 54.700464] 64 bytes from 192.168.50.1: icmp_seq=265 ttl=64 time=8.84 ms
+[ 54.901985] 64 bytes from 192.168.50.1: icmp_seq=266 ttl=64 time=8.07 ms
+[ 55.103622] 64 bytes from 192.168.50.1: icmp_seq=267 ttl=64 time=8.38 ms
+[ 55.308223] 64 bytes from 192.168.50.1: icmp_seq=268 ttl=64 time=8.61 ms
+[ 55.511353] 64 bytes from 192.168.50.1: icmp_seq=269 ttl=64 time=8.17 ms
+[ 55.714664] 64 bytes from 192.168.50.1: icmp_seq=270 ttl=64 time=8.34 ms
+[ 55.920075] 64 bytes from 192.168.50.1: icmp_seq=271 ttl=64 time=7.94 ms
+[ 56.120237] 64 bytes from 192.168.50.1: icmp_seq=272 ttl=64 time=7.62 ms
+[ 56.329546] 64 bytes from 192.168.50.1: icmp_seq=273 ttl=64 time=14.1 ms
+[ 56.534323] 64 bytes from 192.168.50.1: icmp_seq=274 ttl=64 time=14.4 ms
+[ 56.733719] 64 bytes from 192.168.50.1: icmp_seq=275 ttl=64 time=10.4 ms
+[ 56.939824] 64 bytes from 192.168.50.1: icmp_seq=276 ttl=64 time=11.9 ms
+[ 57.144574] 64 bytes from 192.168.50.1: icmp_seq=277 ttl=64 time=12.6 ms
+[ 57.345968] 64 bytes from 192.168.50.1: icmp_seq=278 ttl=64 time=10.8 ms
+[ 57.553544] 64 bytes from 192.168.50.1: icmp_seq=279 ttl=64 time=16.8 ms
+[ 57.749064] 64 bytes from 192.168.50.1: icmp_seq=280 ttl=64 time=9.68 ms
+[ 57.961155] 64 bytes from 192.168.50.1: icmp_seq=281 ttl=64 time=17.1 ms
+[ 58.161355] 64 bytes from 192.168.50.1: icmp_seq=282 ttl=64 time=16.4 ms
+[ 58.362033] 64 bytes from 192.168.50.1: icmp_seq=283 ttl=64 time=14.2 ms
+[ 58.562932] 64 bytes from 192.168.50.1: icmp_seq=284 ttl=64 time=10.5 ms
+[ 58.766734] 64 bytes from 192.168.50.1: icmp_seq=285 ttl=64 time=9.81 ms
+[ 58.974617] 64 bytes from 192.168.50.1: icmp_seq=286 ttl=64 time=14.1 ms
+[ 59.173815] 64 bytes from 192.168.50.1: icmp_seq=287 ttl=64 time=7.87 ms
+[ 59.383514] 64 bytes from 192.168.50.1: icmp_seq=288 ttl=64 time=11.5 ms
+[ 59.588144] 64 bytes from 192.168.50.1: icmp_seq=289 ttl=64 time=12.4 ms
+[ 59.793962] 64 bytes from 192.168.50.1: icmp_seq=290 ttl=64 time=16.0 ms
+[ 59.990211] 64 bytes from 192.168.50.1: icmp_seq=291 ttl=64 time=11.6 ms
+[ 60.189734] 64 bytes from 192.168.50.1: icmp_seq=292 ttl=64 time=8.91 ms
+[ 60.403263] 64 bytes from 192.168.50.1: icmp_seq=293 ttl=64 time=17.6 ms
+[ 60.603859] 64 bytes from 192.168.50.1: icmp_seq=294 ttl=64 time=14.3 ms
+[ 60.803306] 64 bytes from 192.168.50.1: icmp_seq=295 ttl=64 time=9.55 ms
+[ 61.011770] 64 bytes from 192.168.50.1: icmp_seq=296 ttl=64 time=16.5 ms
+[ 61.212061] 64 bytes from 192.168.50.1: icmp_seq=297 ttl=64 time=15.8 ms
+[ 61.408538] 64 bytes from 192.168.50.1: icmp_seq=298 ttl=64 time=10.6 ms
+[ 61.610739] 64 bytes from 192.168.50.1: icmp_seq=299 ttl=64 time=11.8 ms
+[ 61.811295] 64 bytes from 192.168.50.1: icmp_seq=300 ttl=64 time=11.2 ms
+[ 62.012267] 64 bytes from 192.168.50.1: icmp_seq=301 ttl=64 time=11.1 ms
+[ 62.218797] 64 bytes from 192.168.50.1: icmp_seq=302 ttl=64 time=17.1 ms
+[ 62.416362] 64 bytes from 192.168.50.1: icmp_seq=303 ttl=64 time=13.8 ms
+[ 62.614750] 64 bytes from 192.168.50.1: icmp_seq=304 ttl=64 time=10.6 ms
+[ 62.816403] 64 bytes from 192.168.50.1: icmp_seq=305 ttl=64 time=10.4 ms
+[ 63.019259] 64 bytes from 192.168.50.1: icmp_seq=306 ttl=64 time=12.6 ms
+[ 63.219136] 64 bytes from 192.168.50.1: icmp_seq=307 ttl=64 time=11.5 ms
+[ 63.419865] 64 bytes from 192.168.50.1: icmp_seq=308 ttl=64 time=11.5 ms
+[ 63.620536] 64 bytes from 192.168.50.1: icmp_seq=309 ttl=64 time=10.9 ms
+[ 63.823818] 64 bytes from 192.168.50.1: icmp_seq=310 ttl=64 time=13.8 ms
+[ 64.028082] 64 bytes from 192.168.50.1: icmp_seq=311 ttl=64 time=15.5 ms
+[ 64.223563] 64 bytes from 192.168.50.1: icmp_seq=312 ttl=64 time=9.42 ms
+[ 64.425140] 64 bytes from 192.168.50.1: icmp_seq=313 ttl=64 time=8.29 ms
+[ 64.626109] 64 bytes from 192.168.50.1: icmp_seq=314 ttl=64 time=7.39 ms
+[ 64.832206] 64 bytes from 192.168.50.1: icmp_seq=315 ttl=64 time=9.75 ms
+[ 65.034053] 64 bytes from 192.168.50.1: icmp_seq=316 ttl=64 time=7.97 ms
+[ 65.234859] 64 bytes from 192.168.50.1: icmp_seq=317 ttl=64 time=7.82 ms
+[ 65.438362] 64 bytes from 192.168.50.1: icmp_seq=318 ttl=64 time=8.77 ms
+[ 65.638251] 64 bytes from 192.168.50.1: icmp_seq=319 ttl=64 time=7.50 ms
+[ 65.845189] 64 bytes from 192.168.50.1: icmp_seq=320 ttl=64 time=8.51 ms
+[ 66.047260] 64 bytes from 192.168.50.1: icmp_seq=321 ttl=64 time=8.13 ms
+[ 66.251250] 64 bytes from 192.168.50.1: icmp_seq=322 ttl=64 time=7.55 ms
+[ 66.457330] 64 bytes from 192.168.50.1: icmp_seq=323 ttl=64 time=7.78 ms
+[ 66.660897] 64 bytes from 192.168.50.1: icmp_seq=324 ttl=64 time=8.83 ms
+[ 66.865882] 64 bytes from 192.168.50.1: icmp_seq=325 ttl=64 time=7.65 ms
+[ 67.069608] 64 bytes from 192.168.50.1: icmp_seq=326 ttl=64 time=10.1 ms
+[ 67.269872] 64 bytes from 192.168.50.1: icmp_seq=327 ttl=64 time=7.77 ms
+[ 67.477591] 64 bytes from 192.168.50.1: icmp_seq=328 ttl=64 time=14.4 ms
+[ 67.678475] 64 bytes from 192.168.50.1: icmp_seq=329 ttl=64 time=14.4 ms
+[ 67.877684] 64 bytes from 192.168.50.1: icmp_seq=330 ttl=64 time=12.7 ms
+[ 68.077280] 64 bytes from 192.168.50.1: icmp_seq=331 ttl=64 time=11.5 ms
+[ 68.278259] 64 bytes from 192.168.50.1: icmp_seq=332 ttl=64 time=11.5 ms
+[ 68.483729] 64 bytes from 192.168.50.1: icmp_seq=333 ttl=64 time=16.1 ms
+[ 68.683504] 64 bytes from 192.168.50.1: icmp_seq=334 ttl=64 time=15.4 ms
+[ 68.884611] 64 bytes from 192.168.50.1: icmp_seq=335 ttl=64 time=15.7 ms
+[ 69.084188] 64 bytes from 192.168.50.1: icmp_seq=336 ttl=64 time=14.0 ms
+[ 69.284325] 64 bytes from 192.168.50.1: icmp_seq=337 ttl=64 time=13.8 ms
+[ 69.483904] 64 bytes from 192.168.50.1: icmp_seq=338 ttl=64 time=12.1 ms
+[ 69.683872] 64 bytes from 192.168.50.1: icmp_seq=339 ttl=64 time=11.6 ms
+[ 69.884065] 64 bytes from 192.168.50.1: icmp_seq=340 ttl=64 time=10.6 ms
+[ 70.087662] 64 bytes from 192.168.50.1: icmp_seq=341 ttl=64 time=13.2 ms
+[ 70.291655] 64 bytes from 192.168.50.1: icmp_seq=342 ttl=64 time=16.6 ms
+[ 70.491470] 64 bytes from 192.168.50.1: icmp_seq=343 ttl=64 time=15.4 ms
+[ 70.690929] 64 bytes from 192.168.50.1: icmp_seq=344 ttl=64 time=13.4 ms
+[ 70.897662] 64 bytes from 192.168.50.1: icmp_seq=345 ttl=64 time=15.5 ms
+[ 71.098158] 64 bytes from 192.168.50.1: icmp_seq=346 ttl=64 time=10.1 ms
+[ 71.305279] 64 bytes from 192.168.50.1: icmp_seq=347 ttl=64 time=15.6 ms
+[ 71.505867] 64 bytes from 192.168.50.1: icmp_seq=348 ttl=64 time=12.0 ms
+[ 71.705827] 64 bytes from 192.168.50.1: icmp_seq=349 ttl=64 time=11.6 ms
+[ 71.912468] 64 bytes from 192.168.50.1: icmp_seq=350 ttl=64 time=15.6 ms
+[ 72.112819] 64 bytes from 192.168.50.1: icmp_seq=351 ttl=64 time=12.0 ms
+[ 72.317158] 64 bytes from 192.168.50.1: icmp_seq=352 ttl=64 time=15.2 ms
+[ 72.516708] 64 bytes from 192.168.50.1: icmp_seq=353 ttl=64 time=14.2 ms
+[ 72.719447] 64 bytes from 192.168.50.1: icmp_seq=354 ttl=64 time=15.1 ms
+[ 72.918624] 64 bytes from 192.168.50.1: icmp_seq=355 ttl=64 time=13.8 ms
+[ 73.127985] 64 bytes from 192.168.50.1: icmp_seq=356 ttl=64 time=18.1 ms
+[ 73.325075] 64 bytes from 192.168.50.1: icmp_seq=357 ttl=64 time=11.0 ms
+[ 73.534315] 64 bytes from 192.168.50.1: icmp_seq=358 ttl=64 time=15.2 ms
+[ 73.732884] 64 bytes from 192.168.50.1: icmp_seq=359 ttl=64 time=10.6 ms
+[ 73.940401] 64 bytes from 192.168.50.1: icmp_seq=360 ttl=64 time=12.5 ms
+[ 74.148144] 64 bytes from 192.168.50.1: icmp_seq=361 ttl=64 time=17.9 ms
+[ 74.347613] 64 bytes from 192.168.50.1: icmp_seq=362 ttl=64 time=15.2 ms
+[ 74.554499] 64 bytes from 192.168.50.1: icmp_seq=363 ttl=64 time=16.6 ms
+[ 74.754428] 64 bytes from 192.168.50.1: icmp_seq=364 ttl=64 time=14.4 ms
+[ 74.954755] 64 bytes from 192.168.50.1: icmp_seq=365 ttl=64 time=13.8 ms
+[ 75.154257] 64 bytes from 192.168.50.1: icmp_seq=366 ttl=64 time=10.9 ms
+[ 75.353096] 64 bytes from 192.168.50.1: icmp_seq=367 ttl=64 time=8.56 ms
+[ 75.554662] 64 bytes from 192.168.50.1: icmp_seq=368 ttl=64 time=7.41 ms
+[ 75.756110] 64 bytes from 192.168.50.1: icmp_seq=369 ttl=64 time=7.25 ms
+[ 75.962782] 64 bytes from 192.168.50.1: icmp_seq=370 ttl=64 time=8.26 ms
+[ 76.168050] 64 bytes from 192.168.50.1: icmp_seq=371 ttl=64 time=8.18 ms
+[ 76.369604] 64 bytes from 192.168.50.1: icmp_seq=372 ttl=64 time=7.66 ms
+[ 76.572805] 64 bytes from 192.168.50.1: icmp_seq=373 ttl=64 time=9.18 ms
+[ 76.772772] 64 bytes from 192.168.50.1: icmp_seq=374 ttl=64 time=8.26 ms
+[ 76.978514] 64 bytes from 192.168.50.1: icmp_seq=375 ttl=64 time=8.33 ms
+[ 77.181676] 64 bytes from 192.168.50.1: icmp_seq=376 ttl=64 time=8.86 ms
+[ 77.382761] 64 bytes from 192.168.50.1: icmp_seq=377 ttl=64 time=8.21 ms
+[ 77.586975] 64 bytes from 192.168.50.1: icmp_seq=378 ttl=64 time=9.21 ms
+[ 77.788738] 64 bytes from 192.168.50.1: icmp_seq=379 ttl=64 time=7.61 ms
+[ 77.996242] 64 bytes from 192.168.50.1: icmp_seq=380 ttl=64 time=10.1 ms
+[ 78.199093] 64 bytes from 192.168.50.1: icmp_seq=381 ttl=64 time=7.54 ms
+[ 78.406362] 64 bytes from 192.168.50.1: icmp_seq=382 ttl=64 time=13.3 ms
+[ 78.609593] 64 bytes from 192.168.50.1: icmp_seq=383 ttl=64 time=15.1 ms
+[ 78.812901] 64 bytes from 192.168.50.1: icmp_seq=384 ttl=64 time=16.8 ms
+[ 79.012560] 64 bytes from 192.168.50.1: icmp_seq=385 ttl=64 time=15.0 ms
+[ 79.219098] 64 bytes from 192.168.50.1: icmp_seq=386 ttl=64 time=16.2 ms
+[ 79.425406] 64 bytes from 192.168.50.1: icmp_seq=387 ttl=64 time=17.0 ms
+[ 79.625261] 64 bytes from 192.168.50.1: icmp_seq=388 ttl=64 time=11.8 ms
+[ 79.831648] 64 bytes from 192.168.50.1: icmp_seq=389 ttl=64 time=13.4 ms
+[ 80.031853] 64 bytes from 192.168.50.1: icmp_seq=390 ttl=64 time=12.0 ms
+[ 80.238167] 64 bytes from 192.168.50.1: icmp_seq=391 ttl=64 time=14.3 ms
+[ 80.438653] 64 bytes from 192.168.50.1: icmp_seq=392 ttl=64 time=14.0 ms
+[ 80.641433] 64 bytes from 192.168.50.1: icmp_seq=393 ttl=64 time=15.7 ms
+[ 80.845124] 64 bytes from 192.168.50.1: icmp_seq=394 ttl=64 time=18.2 ms
+[ 81.045857] 64 bytes from 192.168.50.1: icmp_seq=395 ttl=64 time=18.4 ms
+[ 81.245834] 64 bytes from 192.168.50.1: icmp_seq=396 ttl=64 time=17.6 ms
+[ 81.446739] 64 bytes from 192.168.50.1: icmp_seq=397 ttl=64 time=15.7 ms
+[ 81.649743] 64 bytes from 192.168.50.1: icmp_seq=398 ttl=64 time=17.3 ms
+[ 81.855617] 64 bytes from 192.168.50.1: icmp_seq=399 ttl=64 time=19.8 ms
+[ 82.055314] 64 bytes from 192.168.50.1: icmp_seq=400 ttl=64 time=16.9 ms
+[ 82.255479] 64 bytes from 192.168.50.1: icmp_seq=401 ttl=64 time=16.7 ms
+[ 82.461629] 64 bytes from 192.168.50.1: icmp_seq=402 ttl=64 time=16.8 ms
+[ 82.664506] 64 bytes from 192.168.50.1: icmp_seq=403 ttl=64 time=13.8 ms
+[ 82.870338] 64 bytes from 192.168.50.1: icmp_seq=404 ttl=64 time=17.4 ms
+[ 83.070125] 64 bytes from 192.168.50.1: icmp_seq=405 ttl=64 time=13.2 ms
+[ 83.276149] 64 bytes from 192.168.50.1: icmp_seq=406 ttl=64 time=13.7 ms
+[ 83.482414] 64 bytes from 192.168.50.1: icmp_seq=407 ttl=64 time=14.3 ms
+[ 83.688487] 64 bytes from 192.168.50.1: icmp_seq=408 ttl=64 time=15.8 ms
+[ 83.891397] 64 bytes from 192.168.50.1: icmp_seq=409 ttl=64 time=15.0 ms
+[ 84.094745] 64 bytes from 192.168.50.1: icmp_seq=410 ttl=64 time=14.7 ms
+[ 84.294576] 64 bytes from 192.168.50.1: icmp_seq=411 ttl=64 time=13.0 ms
+[ 84.494625] 64 bytes from 192.168.50.1: icmp_seq=412 ttl=64 time=12.5 ms
+[ 84.703520] 64 bytes from 192.168.50.1: icmp_seq=413 ttl=64 time=15.5 ms
+[ 84.907642] 64 bytes from 192.168.50.1: icmp_seq=414 ttl=64 time=18.2 ms
+[ 85.107432] 64 bytes from 192.168.50.1: icmp_seq=415 ttl=64 time=14.3 ms
+[ 85.313633] 64 bytes from 192.168.50.1: icmp_seq=416 ttl=64 time=17.6 ms
+[ 85.513776] 64 bytes from 192.168.50.1: icmp_seq=417 ttl=64 time=16.1 ms
+[ 85.716655] 64 bytes from 192.168.50.1: icmp_seq=418 ttl=64 time=14.9 ms
+[ 85.919973] 64 bytes from 192.168.50.1: icmp_seq=419 ttl=64 time=16.8 ms
+[ 86.125878] 64 bytes from 192.168.50.1: icmp_seq=420 ttl=64 time=18.1 ms
+[ 86.326160] 64 bytes from 192.168.50.1: icmp_seq=421 ttl=64 time=17.3 ms
+[ 86.519586] 64 bytes from 192.168.50.1: icmp_seq=422 ttl=64 time=7.26 ms
+[ 86.724952] 64 bytes from 192.168.50.1: icmp_seq=423 ttl=64 time=7.36 ms
+[ 86.930813] 64 bytes from 192.168.50.1: icmp_seq=424 ttl=64 time=7.90 ms
+[ 87.135902] 64 bytes from 192.168.50.1: icmp_seq=425 ttl=64 time=7.70 ms
+[ 87.344195] 64 bytes from 192.168.50.1: icmp_seq=426 ttl=64 time=9.82 ms
+[ 87.546378] 64 bytes from 192.168.50.1: icmp_seq=427 ttl=64 time=7.40 ms
+[ 87.752266] 64 bytes from 192.168.50.1: icmp_seq=428 ttl=64 time=8.25 ms
+[ 87.954787] 64 bytes from 192.168.50.1: icmp_seq=429 ttl=64 time=7.52 ms
+[ 88.160619] 64 bytes from 192.168.50.1: icmp_seq=430 ttl=64 time=7.45 ms
+[ 88.368740] 64 bytes from 192.168.50.1: icmp_seq=431 ttl=64 time=7.99 ms
+[ 88.573630] 64 bytes from 192.168.50.1: icmp_seq=432 ttl=64 time=7.59 ms
+[ 88.775417] 64 bytes from 192.168.50.1: icmp_seq=433 ttl=64 time=7.30 ms
+[ 88.985228] 64 bytes from 192.168.50.1: icmp_seq=434 ttl=64 time=11.1 ms
+[ 89.187396] 64 bytes from 192.168.50.1: icmp_seq=435 ttl=64 time=8.29 ms
+[ 89.388398] 64 bytes from 192.168.50.1: icmp_seq=436 ttl=64 time=7.26 ms
+[ 89.629691] 64 bytes from 192.168.50.1: icmp_seq=437 ttl=64 time=43.0 ms
+[ 89.866591] 64 bytes from 192.168.50.1: icmp_seq=438 ttl=64 time=77.2 ms
+[ 90.109669] 64 bytes from 192.168.50.1: icmp_seq=439 ttl=64 time=115 ms
+[ 90.343373] 64 bytes from 192.168.50.1: icmp_seq=440 ttl=64 time=146 ms
+[ 90.579863] 64 bytes from 192.168.50.1: icmp_seq=441 ttl=64 time=176 ms
+[ 90.811763] no answer yet for icmp_seq=442
+[ 90.822913] 64 bytes from 192.168.50.1: icmp_seq=442 ttl=64 time=215 ms
+[ 91.014213] no answer yet for icmp_seq=443
+[ 91.059592] 64 bytes from 192.168.50.1: icmp_seq=443 ttl=64 time=248 ms
+[ 91.219849] no answer yet for icmp_seq=444
+[ 91.293172] 64 bytes from 192.168.50.1: icmp_seq=444 ttl=64 time=279 ms
+[ 91.423251] no answer yet for icmp_seq=445
+[ 91.627917] no answer yet for icmp_seq=446
+[ 91.836007] no answer yet for icmp_seq=447
+[ 91.932706] 64 bytes from 192.168.50.1: icmp_seq=447 ttl=64 time=305 ms
+[ 92.041295] no answer yet for icmp_seq=448
+[ 92.139124] 64 bytes from 192.168.50.1: icmp_seq=448 ttl=64 time=303 ms
+[ 92.247248] no answer yet for icmp_seq=449
+[ 92.341758] 64 bytes from 192.168.50.1: icmp_seq=449 ttl=64 time=300 ms
+[ 92.451346] no answer yet for icmp_seq=450
+[ 92.547864] 64 bytes from 192.168.50.1: icmp_seq=450 ttl=64 time=301 ms
+[ 92.655806] no answer yet for icmp_seq=451
+[ 92.859768] no answer yet for icmp_seq=452
+[ 93.067966] no answer yet for icmp_seq=453
+[ 93.162428] 64 bytes from 192.168.50.1: icmp_seq=453 ttl=64 time=303 ms
+[ 93.273925] no answer yet for icmp_seq=454
+[ 93.371674] 64 bytes from 192.168.50.1: icmp_seq=454 ttl=64 time=304 ms
+[ 93.476349] no answer yet for icmp_seq=455
+[ 93.574810] 64 bytes from 192.168.50.1: icmp_seq=455 ttl=64 time=301 ms
+[ 93.677747] no answer yet for icmp_seq=456
+[ 93.774657] 64 bytes from 192.168.50.1: icmp_seq=456 ttl=64 time=298 ms
+[ 93.880895] no answer yet for icmp_seq=457
+[ 93.980423] 64 bytes from 192.168.50.1: icmp_seq=457 ttl=64 time=303 ms
+[ 94.083319] no answer yet for icmp_seq=458
+[ 94.183362] 64 bytes from 192.168.50.1: icmp_seq=458 ttl=64 time=302 ms
+[ 94.286329] no answer yet for icmp_seq=459
+[ 94.491896] no answer yet for icmp_seq=460
+[ 94.592595] 64 bytes from 192.168.50.1: icmp_seq=460 ttl=64 time=306 ms
+[ 94.697570] no answer yet for icmp_seq=461
+[ 94.792354] 64 bytes from 192.168.50.1: icmp_seq=461 ttl=64 time=300 ms
+[ 94.899947] no answer yet for icmp_seq=462
+[ 95.001345] 64 bytes from 192.168.50.1: icmp_seq=462 ttl=64 time=304 ms
+[ 95.104958] no answer yet for icmp_seq=463
+[ 95.307865] no answer yet for icmp_seq=464
+[ 95.407342] 64 bytes from 192.168.50.1: icmp_seq=464 ttl=64 time=302 ms
+[ 95.512601] no answer yet for icmp_seq=465
+[ 95.606947] 64 bytes from 192.168.50.1: icmp_seq=465 ttl=64 time=299 ms
+[ 95.714266] no answer yet for icmp_seq=466
+[ 95.813020] 64 bytes from 192.168.50.1: icmp_seq=466 ttl=64 time=300 ms
+[ 95.915675] no answer yet for icmp_seq=467
+[ 96.019119] 64 bytes from 192.168.50.1: icmp_seq=467 ttl=64 time=305 ms
+[ 96.121371] no answer yet for icmp_seq=468
+[ 96.323753] no answer yet for icmp_seq=469
+[ 96.531918] no answer yet for icmp_seq=470
+[ 96.624655] 64 bytes from 192.168.50.1: icmp_seq=470 ttl=64 time=301 ms
+[ 96.732851] no answer yet for icmp_seq=471
+[ 96.939805] no answer yet for icmp_seq=472
+[ 97.147745] no answer yet for icmp_seq=473
+[ 97.243972] 64 bytes from 192.168.50.1: icmp_seq=473 ttl=64 time=304 ms
+[ 97.353194] no answer yet for icmp_seq=474
+[ 97.446919] 64 bytes from 192.168.50.1: icmp_seq=474 ttl=64 time=299 ms
+[ 97.553749] no answer yet for icmp_seq=475
+[ 97.607213] 64 bytes from 192.168.50.1: icmp_seq=475 ttl=64 time=254 ms
+[ 97.640962] 64 bytes from 192.168.50.1: icmp_seq=476 ttl=64 time=87.1 ms
+[ 97.763768] 64 bytes from 192.168.50.1: icmp_seq=477 ttl=64 time=7.83 ms
+[ 97.969722] 64 bytes from 192.168.50.1: icmp_seq=478 ttl=64 time=7.52 ms
+[ 98.175876] 64 bytes from 192.168.50.1: icmp_seq=479 ttl=64 time=7.81 ms
+[ 98.382138] 64 bytes from 192.168.50.1: icmp_seq=480 ttl=64 time=7.38 ms
+[ 98.588194] 64 bytes from 192.168.50.1: icmp_seq=481 ttl=64 time=8.10 ms
+[ 98.788962] 64 bytes from 192.168.50.1: icmp_seq=482 ttl=64 time=7.96 ms
+[ 98.994081] 64 bytes from 192.168.50.1: icmp_seq=483 ttl=64 time=9.29 ms
+[ 99.193398] 64 bytes from 192.168.50.1: icmp_seq=484 ttl=64 time=7.83 ms
+[ 99.399573] 64 bytes from 192.168.50.1: icmp_seq=485 ttl=64 time=8.27 ms
+[ 99.599319] 64 bytes from 192.168.50.1: icmp_seq=486 ttl=64 time=7.51 ms
+[ 99.804796] 64 bytes from 192.168.50.1: icmp_seq=487 ttl=64 time=7.03 ms
+[100.007757] 64 bytes from 192.168.50.1: icmp_seq=488 ttl=64 time=8.21 ms
+[100.209562] 64 bytes from 192.168.50.1: icmp_seq=489 ttl=64 time=7.94 ms
+[100.415188] 64 bytes from 192.168.50.1: icmp_seq=490 ttl=64 time=7.92 ms
+[100.670062] 64 bytes from 192.168.50.1: icmp_seq=491 ttl=64 time=59.8 ms
+[100.941113] 64 bytes from 192.168.50.1: icmp_seq=492 ttl=64 time=127 ms
+[101.214311] 64 bytes from 192.168.50.1: icmp_seq=493 ttl=64 time=199 ms
+[101.419772] no answer yet for icmp_seq=494
+[101.481961] 64 bytes from 192.168.50.1: icmp_seq=494 ttl=64 time=267 ms
+[101.620183] no answer yet for icmp_seq=495
+[101.827689] no answer yet for icmp_seq=496
+[102.036670] no answer yet for icmp_seq=497
+[102.243977] no answer yet for icmp_seq=498
+[102.451892] no answer yet for icmp_seq=499
+[102.660259] no answer yet for icmp_seq=500
+[102.757726] 64 bytes from 192.168.50.1: icmp_seq=500 ttl=64 time=306 ms
+[102.862055] no answer yet for icmp_seq=501
+[103.067901] no answer yet for icmp_seq=502
+[103.166455] 64 bytes from 192.168.50.1: icmp_seq=502 ttl=64 time=304 ms
+[103.272558] no answer yet for icmp_seq=503
+[103.369511] 64 bytes from 192.168.50.1: icmp_seq=503 ttl=64 time=301 ms
+[103.472479] no answer yet for icmp_seq=504
+[103.675848] no answer yet for icmp_seq=505
+[103.883960] no answer yet for icmp_seq=506
+[103.982972] 64 bytes from 192.168.50.1: icmp_seq=506 ttl=64 time=307 ms
+[104.087164] no answer yet for icmp_seq=507
+[104.188804] 64 bytes from 192.168.50.1: icmp_seq=507 ttl=64 time=305 ms
+[104.292879] no answer yet for icmp_seq=508
+[104.499719] no answer yet for icmp_seq=509
+[104.708019] no answer yet for icmp_seq=510
+[104.915959] no answer yet for icmp_seq=511
+[105.010990] 64 bytes from 192.168.50.1: icmp_seq=511 ttl=64 time=303 ms
+[105.119535] no answer yet for icmp_seq=512
+[105.220338] 64 bytes from 192.168.50.1: icmp_seq=512 ttl=64 time=304 ms
+[105.322475] no answer yet for icmp_seq=513
+[105.423207] 64 bytes from 192.168.50.1: icmp_seq=513 ttl=64 time=304 ms
+[105.525050] no answer yet for icmp_seq=514
+[105.625997] 64 bytes from 192.168.50.1: icmp_seq=514 ttl=64 time=303 ms
+[105.731150] no answer yet for icmp_seq=515
+[105.931844] no answer yet for icmp_seq=516
+[106.139776] no answer yet for icmp_seq=517
+[106.348086] no answer yet for icmp_seq=518
+[106.555921] no answer yet for icmp_seq=519
+[106.653061] 64 bytes from 192.168.50.1: icmp_seq=519 ttl=64 time=305 ms
+[106.759813] no answer yet for icmp_seq=520
+[106.859064] 64 bytes from 192.168.50.1: icmp_seq=520 ttl=64 time=303 ms
+[106.964092] no answer yet for icmp_seq=521
+[107.171971] no answer yet for icmp_seq=522
+[107.379942] no answer yet for icmp_seq=523
+[107.478635] 64 bytes from 192.168.50.1: icmp_seq=523 ttl=64 time=306 ms
+[107.581065] no answer yet for icmp_seq=524
+[107.684307] 64 bytes from 192.168.50.1: icmp_seq=524 ttl=64 time=304 ms
+[107.783724] no answer yet for icmp_seq=525
+[107.987973] no answer yet for icmp_seq=526
+[108.195870] no answer yet for icmp_seq=527
+[108.296156] 64 bytes from 192.168.50.1: icmp_seq=527 ttl=64 time=308 ms
+[108.401333] no answer yet for icmp_seq=528
+[108.604140] no answer yet for icmp_seq=529
+[108.708184] 64 bytes from 192.168.50.1: icmp_seq=530 ttl=64 time=104 ms
+[108.817389] 64 bytes from 192.168.50.1: icmp_seq=531 ttl=64 time=8.31 ms
+[109.018517] 64 bytes from 192.168.50.1: icmp_seq=532 ttl=64 time=8.69 ms
+[109.220190] 64 bytes from 192.168.50.1: icmp_seq=533 ttl=64 time=8.08 ms
+[109.425164] 64 bytes from 192.168.50.1: icmp_seq=534 ttl=64 time=7.60 ms
+[109.630808] 64 bytes from 192.168.50.1: icmp_seq=535 ttl=64 time=8.31 ms
+[109.836634] 64 bytes from 192.168.50.1: icmp_seq=536 ttl=64 time=8.34 ms
+[110.038475] 64 bytes from 192.168.50.1: icmp_seq=537 ttl=64 time=7.57 ms
+[110.244301] 64 bytes from 192.168.50.1: icmp_seq=538 ttl=64 time=7.47 ms
+[110.450646] 64 bytes from 192.168.50.1: icmp_seq=539 ttl=64 time=8.02 ms
+[110.654204] 64 bytes from 192.168.50.1: icmp_seq=540 ttl=64 time=7.27 ms
+[110.861252] 64 bytes from 192.168.50.1: icmp_seq=541 ttl=64 time=8.58 ms
+[111.063427] 64 bytes from 192.168.50.1: icmp_seq=542 ttl=64 time=7.52 ms
+[111.270932] 64 bytes from 192.168.50.1: icmp_seq=543 ttl=64 time=9.10 ms
+[111.472042] 64 bytes from 192.168.50.1: icmp_seq=544 ttl=64 time=7.77 ms
+[111.803070] 64 bytes from 192.168.50.1: icmp_seq=545 ttl=64 time=135 ms
+[112.075873] no answer yet for icmp_seq=546
+[112.147584] 64 bytes from 192.168.50.1: icmp_seq=546 ttl=64 time=275 ms
+[112.281807] no answer yet for icmp_seq=547
+[112.483779] no answer yet for icmp_seq=548
+[112.691821] no answer yet for icmp_seq=549
+[112.899871] no answer yet for icmp_seq=550
+[113.107763] no answer yet for icmp_seq=551
+[113.315706] no answer yet for icmp_seq=552
+[113.523777] no answer yet for icmp_seq=553
+[113.731808] no answer yet for icmp_seq=554
+[113.828903] 64 bytes from 192.168.50.1: icmp_seq=554 ttl=64 time=305 ms
+[113.935128] no answer yet for icmp_seq=555
+[114.139775] no answer yet for icmp_seq=556
+[114.347908] no answer yet for icmp_seq=557
+[114.444354] 64 bytes from 192.168.50.1: icmp_seq=557 ttl=64 time=304 ms
+[114.548154] no answer yet for icmp_seq=558
+[114.652895] 64 bytes from 192.168.50.1: icmp_seq=558 ttl=64 time=305 ms
+[114.758916] no answer yet for icmp_seq=559
+[114.963796] no answer yet for icmp_seq=560
+[115.172014] no answer yet for icmp_seq=561
+[115.379800] no answer yet for icmp_seq=562
+[115.588132] no answer yet for icmp_seq=563
+[115.796233] no answer yet for icmp_seq=564
+[116.003854] no answer yet for icmp_seq=565
+[116.211751] no answer yet for icmp_seq=566
+[116.419789] no answer yet for icmp_seq=567
+[116.628042] no answer yet for icmp_seq=568
+[116.835885] no answer yet for icmp_seq=569
+[116.934353] 64 bytes from 192.168.50.1: icmp_seq=569 ttl=64 time=306 ms
+[117.046453] no answer yet for icmp_seq=570
+[117.251676] no answer yet for icmp_seq=571
+[117.460150] no answer yet for icmp_seq=572
+[117.556680] 64 bytes from 192.168.50.1: icmp_seq=572 ttl=64 time=305 ms
+[117.669559] no answer yet for icmp_seq=573
+[117.762587] 64 bytes from 192.168.50.1: icmp_seq=573 ttl=64 time=302 ms
+[117.873139] no answer yet for icmp_seq=574
+[117.971655] 64 bytes from 192.168.50.1: icmp_seq=574 ttl=64 time=302 ms
+[118.081439] no answer yet for icmp_seq=575
+[118.177831] 64 bytes from 192.168.50.1: icmp_seq=575 ttl=64 time=305 ms
+[118.289458] no answer yet for icmp_seq=576
+[118.491978] no answer yet for icmp_seq=577
+[118.699896] no answer yet for icmp_seq=578
+[118.907862] no answer yet for icmp_seq=579
+[119.115927] no answer yet for icmp_seq=580
+[119.324192] no answer yet for icmp_seq=581
+[119.419784] 64 bytes from 192.168.50.1: icmp_seq=581 ttl=64 time=304 ms
+[119.523892] no answer yet for icmp_seq=582
+[119.732132] no answer yet for icmp_seq=583
+[119.749967] 64 bytes from 192.168.50.1: icmp_seq=583 ttl=64 time=226 ms
+[119.757276] 64 bytes from 192.168.50.1: icmp_seq=584 ttl=64 time=25.1 ms
+[119.945333] 64 bytes from 192.168.50.1: icmp_seq=585 ttl=64 time=8.66 ms
+[120.148160] 64 bytes from 192.168.50.1: icmp_seq=586 ttl=64 time=8.30 ms
+[120.357180] 64 bytes from 192.168.50.1: icmp_seq=587 ttl=64 time=8.97 ms
+[120.566679] 64 bytes from 192.168.50.1: icmp_seq=588 ttl=64 time=9.18 ms
+[120.773483] 64 bytes from 192.168.50.1: icmp_seq=589 ttl=64 time=8.30 ms
+[120.982127] 64 bytes from 192.168.50.1: icmp_seq=590 ttl=64 time=8.92 ms
+[121.190599] 64 bytes from 192.168.50.1: icmp_seq=591 ttl=64 time=8.79 ms
+[121.400114] 64 bytes from 192.168.50.1: icmp_seq=592 ttl=64 time=8.11 ms
+[121.611785] 64 bytes from 192.168.50.1: icmp_seq=593 ttl=64 time=10.5 ms
+[121.822341] 64 bytes from 192.168.50.1: icmp_seq=594 ttl=64 time=10.2 ms
+[122.032381] 64 bytes from 192.168.50.1: icmp_seq=595 ttl=64 time=9.78 ms
+[122.232804] 64 bytes from 192.168.50.1: icmp_seq=596 ttl=64 time=8.71 ms
+[122.440789] 64 bytes from 192.168.50.1: icmp_seq=597 ttl=64 time=9.39 ms
+[122.731243] 64 bytes from 192.168.50.1: icmp_seq=598 ttl=64 time=94.7 ms
+[123.043763] no answer yet for icmp_seq=599
+[123.251991] no answer yet for icmp_seq=600
+[123.460205] no answer yet for icmp_seq=601
+[123.668046] no answer yet for icmp_seq=602
+[123.875794] no answer yet for icmp_seq=603
+[124.084153] no answer yet for icmp_seq=604
+[124.291763] no answer yet for icmp_seq=605
+[124.389546] 64 bytes from 192.168.50.1: icmp_seq=605 ttl=64 time=305 ms
+[124.498808] no answer yet for icmp_seq=606
+[124.596150] 64 bytes from 192.168.50.1: icmp_seq=606 ttl=64 time=304 ms
+[124.704854] no answer yet for icmp_seq=607
+[124.907847] no answer yet for icmp_seq=608
+[125.116042] no answer yet for icmp_seq=609
+[125.323770] no answer yet for icmp_seq=610
+[125.531757] no answer yet for icmp_seq=611
+[125.739858] no answer yet for icmp_seq=612
+[125.948096] no answer yet for icmp_seq=613
+[126.156077] no answer yet for icmp_seq=614
+[126.364116] no answer yet for icmp_seq=615
+[126.572141] no answer yet for icmp_seq=616
+[126.779740] no answer yet for icmp_seq=617
+[126.987783] no answer yet for icmp_seq=618
+[127.195826] no answer yet for icmp_seq=619
+[127.403758] no answer yet for icmp_seq=620
+[127.500823] 64 bytes from 192.168.50.1: icmp_seq=620 ttl=64 time=305 ms
+[127.613336] no answer yet for icmp_seq=621
+[127.820151] no answer yet for icmp_seq=622
+[128.028142] no answer yet for icmp_seq=623
+[128.235888] no answer yet for icmp_seq=624
+[128.443833] no answer yet for icmp_seq=625
+[128.652163] no answer yet for icmp_seq=626
+[128.860189] no answer yet for icmp_seq=627
+[128.957553] 64 bytes from 192.168.50.1: icmp_seq=627 ttl=64 time=305 ms
+[129.060778] no answer yet for icmp_seq=628
+[129.268085] no answer yet for icmp_seq=629
+[129.475787] no answer yet for icmp_seq=630
+[129.683917] no answer yet for icmp_seq=631
+[129.892121] no answer yet for icmp_seq=632
+[130.099887] no answer yet for icmp_seq=633
+[130.308060] no answer yet for icmp_seq=634
+[130.402594] 64 bytes from 192.168.50.1: icmp_seq=634 ttl=64 time=303 ms
+[130.517176] no answer yet for icmp_seq=635
+[130.723903] no answer yet for icmp_seq=636
+[130.812911] 64 bytes from 192.168.50.1: icmp_seq=637 ttl=64 time=88.9 ms
+[130.943383] 64 bytes from 192.168.50.1: icmp_seq=638 ttl=64 time=9.44 ms
+[131.153514] 64 bytes from 192.168.50.1: icmp_seq=639 ttl=64 time=10.7 ms
+[131.354510] 64 bytes from 192.168.50.1: icmp_seq=640 ttl=64 time=9.94 ms
+[131.563080] 64 bytes from 192.168.50.1: icmp_seq=641 ttl=64 time=8.32 ms
+[131.773295] 64 bytes from 192.168.50.1: icmp_seq=642 ttl=64 time=9.46 ms
+[131.982631] 64 bytes from 192.168.50.1: icmp_seq=643 ttl=64 time=8.60 ms
+[132.184511] 64 bytes from 192.168.50.1: icmp_seq=644 ttl=64 time=8.40 ms
+[132.395394] 64 bytes from 192.168.50.1: icmp_seq=645 ttl=64 time=8.48 ms
+[132.606208] 64 bytes from 192.168.50.1: icmp_seq=646 ttl=64 time=10.1 ms
+[132.807612] 64 bytes from 192.168.50.1: icmp_seq=647 ttl=64 time=8.50 ms
+[133.010596] 64 bytes from 192.168.50.1: icmp_seq=648 ttl=64 time=8.97 ms
+[133.218203] 64 bytes from 192.168.50.1: icmp_seq=649 ttl=64 time=9.31 ms
+[133.426293] 64 bytes from 192.168.50.1: icmp_seq=650 ttl=64 time=8.48 ms
+[133.622822] 
+[133.623105] --- 192.168.50.1 ping statistics ---
+[133.623191] 650 packets transmitted, 559 received, 14% packet loss, time 132402ms
+[133.623286] rtt min/avg/max/mdev = 6.852/40.666/308.060/86.496 ms, pipe 2
+[133.623851] # ping_node_b: exit 0

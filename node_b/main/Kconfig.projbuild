@@ -1,0 +1,245 @@
+# Copyright 2026 siraisisatoru
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Options named CONFIG_LAB_<NAME> are adopted by common/include/halow_lab_config.h as LAB_<NAME>.
+# The defaults are the lab's canonical network plan; node A and the relay must agree with them.
+
+menu "HaLow lab: network plan"
+
+    config LAB_SSID
+        string "SSID"
+        default "halow-relay-lab"
+        help
+            SSID of the root AP. The relay's repeater AP copies it, so it is the same on every
+            node.
+
+    config LAB_PASSPHRASE
+        string "SAE passphrase"
+        default "change-me-halow-au"
+        help
+            WPA3-SAE passphrase (PMF required). The default is a placeholder and must be changed
+            on all three nodes for anything other than a shielded lab.
+
+    config LAB_COUNTRY
+        string "Country code"
+        default "AU"
+        help
+            Must equal CONFIG_HALOW_COUNTRY_CODE (the code esp-halow loads the channel list
+            for). The application refuses to start the radio if they differ.
+
+    config LAB_S1G_CHAN_NUM
+        int "S1G channel number"
+        range 1 255
+        default 37
+        help
+            Root AP operating channel. 37 is the 2 MHz channel at 920.5 MHz in the AU
+            802.11 REVmf channel list. The repeater follows the root's channel.
+
+    config LAB_OP_CLASS
+        int "Operating class"
+        range 1 255
+        default 51
+        help
+            Operating class of LAB_S1G_CHAN_NUM, passed as mmwlan_ap_args.op_class. morselib
+            accepts either the global class (51) or the S1G class (23) of the channel.
+
+    config LAB_PRI_BW_MHZ
+        int "Primary channel bandwidth (MHz)"
+        range 0 2
+        default 2
+        help
+            0 lets morselib pick the widest primary the channel allows.
+
+    config LAB_PRI_1MHZ_CHAN_IDX
+        int "Primary 1 MHz channel index"
+        range 0 1
+        default 0
+
+    config LAB_ROOT_AP_BSSID
+        string "Root AP BSSID (empty = derived from the device MAC)"
+        default ""
+        help
+            Optional fixed BSSID for the root AP, "aa:bb:cc:dd:ee:ff". Leave empty to let
+            morselib derive it from the device MAC with the locally administered bit flipped
+            (first byte XOR 0x02), so it is not the mac= value of the ev=boot line. For a direct
+            (no relay) baseline, set node A's LAB_ROOT_AP_BSSID to the bssid= value of the
+            ev=root_up line, or set the same explicit value here and on node A.
+
+    config LAB_IP_NODE_B
+        string "Node B (root) IPv4 address"
+        default "192.168.50.1"
+
+    config LAB_IP_RELAY
+        string "Relay IPv4 address"
+        default "192.168.50.2"
+
+    config LAB_IP_NODE_A
+        string "Node A IPv4 address"
+        default "192.168.50.10"
+
+    config LAB_NETMASK
+        string "IPv4 netmask"
+        default "255.255.255.0"
+
+    config LAB_GATEWAY
+        string "IPv4 gateway"
+        default "0.0.0.0"
+        help
+            Every node is on the same L2 subnet, so no gateway is needed.
+
+    config LAB_UDP_ECHO_PORT
+        int "UDP echo port"
+        range 1 65535
+        default 5000
+
+    config LAB_TCP_STREAM_PORT
+        int "TCP message stream port"
+        range 1 65535
+        default 5001
+
+    config LAB_REPORT_INTERVAL_MS
+        int "STATS report interval (ms)"
+        range 0 3600000
+        default 5000
+        help
+            Period of the servers' STATS lines; 0 prints only the final line of each session.
+
+endmenu
+
+menu "HaLow lab: node B (relay root)"
+
+    config LAB_B_MAX_STAS
+        int "Maximum directly associated stations"
+        range 1 20
+        default 4
+        help
+            Stations (the relay, or node A in a direct baseline) that may associate with the
+            root itself. Nodes behind the relay do not count.
+
+    config LAB_B_FORWARDING_TABLE_SIZE
+        int "Relay forwarding table size (0 = SDK default, 64)"
+        range 0 1024
+        default 0
+
+    config LAB_B_UDP_ECHO_SERVER
+        bool "Run the UDP echo server"
+        default y
+
+    config LAB_B_TCP_STREAM_SERVER
+        bool "Run the TCP message stream server"
+        default y
+
+    config LAB_B_TCP_IDLE_TIMEOUT_MS
+        int "TCP server idle timeout (ms, 0 = never)"
+        range 0 3600000
+        default 60000
+        depends on LAB_B_TCP_STREAM_SERVER
+        help
+            A connection that delivers nothing for this long is closed.
+
+    config LAB_B_HEALTH_INTERVAL_MS
+        int "Health line interval (ms)"
+        range 1000 3600000
+        default 10000
+
+    config LAB_B_STATIC_ARP
+        bool "Static ARP fallback for node A and the relay"
+        default n
+        depends on LWIP_DHCPS_STATIC_ENTRIES
+        help
+            Install static ARP entries on the root for the peers whose MAC is given below.
+            Entries are re-installed on every link up, every time a station is authorized,
+            and on every health interval, because lwIP drops them when the netif goes down.
+
+            Only needed for builds that can not broadcast from the root (esp-halow issue #10
+            without patch 0002 and without esp-halow's group-RA workaround). It also covers
+            ARP entries lost when another station associates (issue #9, second part).
+
+    config LAB_B_STATIC_ARP_NODE_A_MAC
+        string "Node A MAC address"
+        default ""
+        depends on LAB_B_STATIC_ARP
+        help
+            Node A's HaLow MAC, as printed in its EVENT,node,...,ev=boot line. Empty = no
+            entry.
+
+    config LAB_B_STATIC_ARP_RELAY_MAC
+        string "Relay MAC address"
+        default ""
+        depends on LAB_B_STATIC_ARP
+        help
+            The relay's device (STA) MAC, not its AP BSSID 02:48:4C:00:00:02: the relay's IP
+            stack is bound to the STA interface. Empty = no entry.
+
+    config LAB_B_TPUT_SERVER
+        bool "Throughput test sink"
+        default n
+        help
+            Count bulk TCP (port 5002) and UDP (port 5003) traffic from node A's throughput
+            test (CONFIG_LAB_A_TPUT) and print the received rate: STATS,tput_srv lines every
+            report interval and an EVENT,tput_srv,ev=end line per test.
+
+    config LAB_B_TPUT_CLIENT
+        bool "Throughput test client to node A"
+        default n
+        help
+            Repeatedly send as fast as possible to node A's throughput sink (needs
+            CONFIG_LAB_A_TPUT_SERVER on node A), for the B -> A direction: a TCP test, then a UDP
+            test, each LAB_B_TPUT_DURATION_MS long, with a pause after each. Starts when the
+            first station is authorized; tests fail until node A is reachable. Node A's
+            EVENT,tput_srv,ev=end lines are the result.
+
+    config LAB_B_TPUT_DURATION_MS
+        int "Throughput test duration (ms)"
+        range 1000 600000
+        default 20000
+        depends on LAB_B_TPUT_CLIENT
+
+    config LAB_B_TPUT_PAUSE_MS
+        int "Pause after each throughput test (ms)"
+        range 0 600000
+        default 3000
+        depends on LAB_B_TPUT_CLIENT
+
+    config LAB_B_TPUT_UDP_LEN
+        int "Throughput test UDP datagram payload bytes"
+        range 16 1472
+        default 1460
+        depends on LAB_B_TPUT_CLIENT
+
+    menu "Root to relay probes (diagnostic)"
+
+        config LAB_B_PING_RELAY
+            bool "Ping the relay"
+            default n
+            help
+                Ping the relay (LAB_IP_RELAY) from node B, printed as PING,relay,... lines as on
+                node A. Tests the root <-> relay hop on its own, for example when only node B and
+                the relay are powered. Starts when the first station is authorized and then runs
+                for the life of the node; pings while the relay is away count as timeouts.
+
+        config LAB_B_UDP_ECHO_RELAY
+            bool "UDP echo to the relay (flow udp_relay)"
+            default n
+            help
+                Run a UDP echo client from node B against the relay's echo server
+                (LAB_IP_RELAY:LAB_UDP_ECHO_PORT), at LAB_UDP_RATE_PPS with LAB_UDP_PAYLOAD_LEN
+                bytes. Starts like LAB_B_PING_RELAY. The relay's echo server serves one client at
+                a time, so do not combine this with node A's udp_relay flow.
+
+        config LAB_B_PING_INTERVAL_MS
+            int "Ping interval (ms)"
+            range 10 60000
+            default 1000
+            depends on LAB_B_PING_RELAY
+
+        config LAB_B_PING_TIMEOUT_MS
+            int "Ping reply timeout (ms)"
+            range 10 60000
+            default 1000
+            depends on LAB_B_PING_RELAY
+
+    endmenu
+
+endmenu

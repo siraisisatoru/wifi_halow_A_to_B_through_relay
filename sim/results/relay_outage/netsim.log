@@ -1,0 +1,4 @@
+[  0.000667] EVENT,netsim,t_ms=0,ev=setup,topology=relay,scenario=relay_outage,comp_ms=0.349,air_overhead_bytes=924
+[ 20.008592] EVENT,netsim,t_ms=20008,ev=link_down,hop=r_b
+[ 35.007996] EVENT,netsim,t_ms=35007,ev=link_up,hop=r_b
+[ 93.534957] EVENT,netsim,t_ms=93534,ev=end,air_sent_pkts=9929,air_dropped=0,root_group_tx_dropped=0

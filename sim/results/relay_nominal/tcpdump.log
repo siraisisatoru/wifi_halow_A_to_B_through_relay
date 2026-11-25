@@ -1,0 +1,6 @@
+[  0.004705] # tcpdump: ip netns exec hlA tcpdump -i eth0 -n -U -s 96 -B 8192 -w /tmp/sim_relay_nominal.pcap udp port 5000
+[  0.019388] tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 96 bytes
+[ 63.695354] 2400 packets captured
+[ 63.695511] 2400 packets received by filter
+[ 63.695610] 0 packets dropped by kernel
+[ 63.711555] # tcpdump: exit 0

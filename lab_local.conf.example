@@ -1,0 +1,27 @@
+# Copyright 2026 siraisisatoru
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Local lab settings, kept out of git. Copy this file to lab_local.conf (git-ignored) at the
+# repository root and fill it in. All three firmwares read it:
+#
+#   node_a, node_b   added to the ESP-IDF sdkconfig defaults (node_*/CMakeLists.txt). Defaults only
+#                    fill a NEW sdkconfig: after editing this file, delete the project's sdkconfig
+#                    (or run idf.py fullclean) so the new values are used.
+#   relay_ekh05      compiled into the firmware through a generated header (relay_ekh05/Makefile),
+#                    so the plain drag-and-drop .bin uses them too. Keys written to the relay's
+#                    config store (config.hjson) still take precedence at run time.
+#
+# Syntax is sdkconfig's: CONFIG_NAME=value, strings in double quotes, one per line. Any
+# CONFIG_LAB_* option of node_a/node_b may be set here; the relay uses the network plan ones
+# (common/include/halow_lab_config.h).
+
+# Network name and WPA3-SAE passphrase (8..100 characters), the same on all three nodes.
+CONFIG_LAB_SSID="halow-relay-lab"
+CONFIG_LAB_PASSPHRASE="change-me-halow-au"
+
+# Node B's BSSID: the bssid= value of node B's EVENT,wlan,...,ev=root_up line (node B's device MAC
+# with the locally administered bit set). Needed only for node A's direct mode
+# (CONFIG_LAB_A_PIN_ROOT, see experiments/throughput/) and to label a link to the root in node
+# A's log.
+#CONFIG_LAB_ROOT_AP_BSSID="xx:xx:xx:xx:xx:xx"

@@ -1,0 +1,85 @@
+{
+  "name": "relay_saturation",
+  "title": "A-relay-B, UDP echo rate sweep",
+  "description": "1000-byte UDP echo at increasing rate until the shared channel saturates (each echo crosses the air four times through the relay). TCP off; ping to B keeps running to show queueing delay.",
+  "topology": "relay",
+  "duration_s": 60,
+  "medium": {
+    "_comment": "S1G 2 MHz, 1 SS, MCS5, long GI: 5.2 Mbit/s PHY. frame_overhead_us = S1G short preamble 240 + SIFS 160 + NDP ACK 240 + AIFS[BE] 316 + mean backoff 7.5 slots x 52 = 390. mac_overhead_bytes = 4-address QoS MAC header 32 + LLC/SNAP 8 + CCMP 16 + FCS 4.",
+    "mcs": 5,
+    "bandwidth_mhz": 2,
+    "phy_rate_kbps": 5200,
+    "frame_overhead_us": 1350,
+    "mac_overhead_bytes": 60,
+    "queue_frames": 50
+  },
+  "hops": {
+    "a_r": {
+      "delay_ms": 2.0,
+      "jitter_ms": 0.5,
+      "loss_pct": 0.0
+    },
+    "r_b": {
+      "delay_ms": 2.0,
+      "jitter_ms": 0.5,
+      "loss_pct": 0.0
+    }
+  },
+  "relay_fwd_delay_ms": 1.0,
+  "root_drops_group_tx": true,
+  "node_a": {
+    "udp-rate-pps": 10,
+    "udp-payload-len": 64,
+    "tcp-rate-mps": 5,
+    "tcp-payload-len": 256
+  },
+  "ping": {
+    "interval_ms": 200,
+    "size": 56,
+    "targets": [
+      "node_b",
+      "relay"
+    ]
+  },
+  "sweep": {
+    "param": "udp-rate-pps",
+    "values": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      120,
+      140
+    ],
+    "step_s": 8,
+    "gap_s": 2,
+    "flow_prefix": "sat",
+    "fixed": {
+      "udp-payload-len": 1000,
+      "tcp": 0,
+      "relay-echo": 0,
+      "udp-drain-ms": 1000
+    }
+  },
+  "expect": [
+    {
+      "metric": "sweep.first_loss_pct",
+      "max": 1.0
+    },
+    {
+      "metric": "sweep.last_loss_pct",
+      "min": 5.0
+    },
+    {
+      "metric": "sweep.knee_over_model",
+      "min": 0.75,
+      "max": 1.25
+    }
+  ]
+}

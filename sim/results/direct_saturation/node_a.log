@@ -1,0 +1,192 @@
+[  1.014879] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 20 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0020
+[  1.016790] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[  1.016905] EVENT,sat_0020,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=20,payload=1000,count=0,duration_ms=8000,session=4446e749
+[  2.022272] STATS,sat_0020,t_ms=1005,sent=20,rcvd=20,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=20,rtt_min_us=10293,rtt_avg_us=12013,rtt_max_us=18583,jitter_us=693,hist=0/0/0/0/20/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  3.020054] STATS,sat_0020,t_ms=2003,sent=40,rcvd=40,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=40,rtt_min_us=10293,rtt_avg_us=11882,rtt_max_us=18583,jitter_us=888,hist=0/0/0/0/40/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  4.019908] STATS,sat_0020,t_ms=3002,sent=60,rcvd=60,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=60,rtt_min_us=10293,rtt_avg_us=11866,rtt_max_us=18583,jitter_us=798,hist=0/0/0/0/60/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  5.018563] STATS,sat_0020,t_ms=4001,sent=80,rcvd=80,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=80,rtt_min_us=10293,rtt_avg_us=11776,rtt_max_us=18583,jitter_us=792,hist=0/0/0/0/80/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  6.018276] STATS,sat_0020,t_ms=5001,sent=100,rcvd=100,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=100,rtt_min_us=10103,rtt_avg_us=11803,rtt_max_us=18583,jitter_us=942,hist=0/0/0/0/100/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  7.019069] STATS,sat_0020,t_ms=6002,sent=120,rcvd=120,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=120,rtt_min_us=10103,rtt_avg_us=11825,rtt_max_us=18583,jitter_us=944,hist=0/0/0/0/120/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  8.019709] STATS,sat_0020,t_ms=7002,sent=140,rcvd=140,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=140,rtt_min_us=10103,rtt_avg_us=11847,rtt_max_us=18583,jitter_us=829,hist=0/0/0/0/140/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[  9.022005] STATS,sat_0020,t_ms=8005,sent=160,rcvd=160,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=160,rtt_min_us=10103,rtt_avg_us=11837,rtt_max_us=18583,jitter_us=783,hist=0/0/0/0/160/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 10.017884] STATS,sat_0020,t_ms=9000,sent=160,rcvd=160,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=160,rtt_min_us=10103,rtt_avg_us=11837,rtt_max_us=18583,jitter_us=783,hist=0/0/0/0/160/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 10.023769] STATS,sat_0020,t_ms=9006,sent=160,rcvd=160,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=160,rtt_min_us=10103,rtt_avg_us=11837,rtt_max_us=18583,jitter_us=783,hist=0/0/0/0/160/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 10.023911] EVENT,sat_0020,t_ms=9006,ev=end,reason=done,sent=160
+[ 10.024039] EVENT,node_a,t_ms=9007,ev=exit
+[ 10.068321] # node_a: exit 0
+[ 12.073916] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 40 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0040
+[ 12.076182] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 12.076338] EVENT,sat_0040,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=40,payload=1000,count=0,duration_ms=8000,session=49818c34
+[ 13.077346] STATS,sat_0040,t_ms=1000,sent=40,rcvd=40,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=40,rtt_min_us=10224,rtt_avg_us=11682,rtt_max_us=13400,jitter_us=658,hist=0/0/0/0/40/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 14.079613] STATS,sat_0040,t_ms=2003,sent=80,rcvd=80,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=80,rtt_min_us=10224,rtt_avg_us=11634,rtt_max_us=14198,jitter_us=897,hist=0/0/0/0/80/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 15.076783] STATS,sat_0040,t_ms=3000,sent=120,rcvd=120,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=120,rtt_min_us=10176,rtt_avg_us=11678,rtt_max_us=14379,jitter_us=1017,hist=0/0/0/0/120/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 16.076730] STATS,sat_0040,t_ms=4000,sent=160,rcvd=160,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=160,rtt_min_us=10176,rtt_avg_us=11699,rtt_max_us=14379,jitter_us=846,hist=0/0/0/0/160/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 17.077867] STATS,sat_0040,t_ms=5001,sent=200,rcvd=200,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=200,rtt_min_us=10176,rtt_avg_us=11736,rtt_max_us=14379,jitter_us=914,hist=0/0/0/0/200/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 18.079780] STATS,sat_0040,t_ms=6003,sent=240,rcvd=240,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=240,rtt_min_us=10176,rtt_avg_us=11716,rtt_max_us=14379,jitter_us=998,hist=0/0/0/0/240/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 19.079453] STATS,sat_0040,t_ms=7003,sent=280,rcvd=280,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=280,rtt_min_us=9958,rtt_avg_us=11707,rtt_max_us=14379,jitter_us=862,hist=0/0/0/1/279/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 20.079169] STATS,sat_0040,t_ms=8002,sent=320,rcvd=320,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=320,rtt_min_us=9958,rtt_avg_us=11689,rtt_max_us=14379,jitter_us=846,hist=0/0/0/1/319/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 21.082197] STATS,sat_0040,t_ms=9005,sent=320,rcvd=320,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=320,rtt_min_us=9958,rtt_avg_us=11689,rtt_max_us=14379,jitter_us=846,hist=0/0/0/1/319/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 21.082469] STATS,sat_0040,t_ms=9005,sent=320,rcvd=320,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=320,rtt_min_us=9958,rtt_avg_us=11689,rtt_max_us=14379,jitter_us=846,hist=0/0/0/1/319/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 21.082604] EVENT,sat_0040,t_ms=9005,ev=end,reason=done,sent=320
+[ 21.082714] EVENT,node_a,t_ms=9006,ev=exit
+[ 21.089283] # node_a: exit 0
+[ 23.096589] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 60 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0060
+[ 23.100360] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 23.100562] EVENT,sat_0060,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=60,payload=1000,count=0,duration_ms=8000,session=bb578ff2
+[ 24.101837] STATS,sat_0060,t_ms=1001,sent=60,rcvd=60,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=60,rtt_min_us=9832,rtt_avg_us=11485,rtt_max_us=13594,jitter_us=908,hist=0/0/0/1/59/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 25.102697] STATS,sat_0060,t_ms=2002,sent=120,rcvd=120,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=120,rtt_min_us=9832,rtt_avg_us=11466,rtt_max_us=13698,jitter_us=1028,hist=0/0/0/2/118/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 26.102058] STATS,sat_0060,t_ms=3001,sent=180,rcvd=180,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=180,rtt_min_us=9725,rtt_avg_us=11489,rtt_max_us=14802,jitter_us=834,hist=0/0/0/4/176/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 27.101633] STATS,sat_0060,t_ms=4001,sent=240,rcvd=240,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=240,rtt_min_us=9725,rtt_avg_us=11500,rtt_max_us=14802,jitter_us=949,hist=0/0/0/4/236/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 28.101290] STATS,sat_0060,t_ms=5000,sent=300,rcvd=300,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=300,rtt_min_us=9725,rtt_avg_us=11477,rtt_max_us=14802,jitter_us=744,hist=0/0/0/6/294/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 29.102297] STATS,sat_0060,t_ms=6001,sent=360,rcvd=360,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=360,rtt_min_us=9725,rtt_avg_us=11467,rtt_max_us=14802,jitter_us=904,hist=0/0/0/6/354/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 30.101796] STATS,sat_0060,t_ms=7001,sent=420,rcvd=420,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=420,rtt_min_us=9236,rtt_avg_us=11469,rtt_max_us=14802,jitter_us=762,hist=0/0/0/8/412/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 31.102070] STATS,sat_0060,t_ms=8001,sent=480,rcvd=480,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=480,rtt_min_us=9236,rtt_avg_us=11489,rtt_max_us=14802,jitter_us=749,hist=0/0/0/8/472/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 32.103929] STATS,sat_0060,t_ms=9003,sent=480,rcvd=480,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=480,rtt_min_us=9236,rtt_avg_us=11489,rtt_max_us=14802,jitter_us=749,hist=0/0/0/8/472/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 32.104220] STATS,sat_0060,t_ms=9003,sent=480,rcvd=480,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=480,rtt_min_us=9236,rtt_avg_us=11489,rtt_max_us=14802,jitter_us=749,hist=0/0/0/8/472/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 32.104419] EVENT,sat_0060,t_ms=9003,ev=end,reason=done,sent=480
+[ 32.104487] EVENT,node_a,t_ms=9003,ev=exit
+[ 32.138763] # node_a: exit 0
+[ 34.145700] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 80 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0080
+[ 34.148418] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 34.148556] EVENT,sat_0080,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=80,payload=1000,count=0,duration_ms=8000,session=ed215f44
+[ 35.149893] STATS,sat_0080,t_ms=1001,sent=80,rcvd=80,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=80,rtt_min_us=10241,rtt_avg_us=11477,rtt_max_us=14151,jitter_us=905,hist=0/0/0/0/80/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 36.148883] STATS,sat_0080,t_ms=2000,sent=160,rcvd=160,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=160,rtt_min_us=9715,rtt_avg_us=11431,rtt_max_us=14750,jitter_us=875,hist=0/0/0/1/159/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 37.149925] STATS,sat_0080,t_ms=3001,sent=240,rcvd=240,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=240,rtt_min_us=9715,rtt_avg_us=11506,rtt_max_us=14750,jitter_us=871,hist=0/0/0/1/239/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 38.150093] STATS,sat_0080,t_ms=4001,sent=320,rcvd=320,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=320,rtt_min_us=9715,rtt_avg_us=11520,rtt_max_us=14750,jitter_us=884,hist=0/0/0/2/318/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 39.149131] STATS,sat_0080,t_ms=5000,sent=400,rcvd=400,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=400,rtt_min_us=9715,rtt_avg_us=11533,rtt_max_us=14789,jitter_us=972,hist=0/0/0/2/398/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 40.149155] STATS,sat_0080,t_ms=6000,sent=480,rcvd=480,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=480,rtt_min_us=9715,rtt_avg_us=11564,rtt_max_us=14789,jitter_us=805,hist=0/0/0/2/478/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 41.149483] STATS,sat_0080,t_ms=7000,sent=560,rcvd=560,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=560,rtt_min_us=9715,rtt_avg_us=11551,rtt_max_us=14789,jitter_us=963,hist=0/0/0/2/558/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 42.149041] STATS,sat_0080,t_ms=8000,sent=640,rcvd=640,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=640,rtt_min_us=9715,rtt_avg_us=11572,rtt_max_us=14789,jitter_us=889,hist=0/0/0/2/638/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 43.154678] STATS,sat_0080,t_ms=9006,sent=640,rcvd=640,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=640,rtt_min_us=9715,rtt_avg_us=11572,rtt_max_us=14789,jitter_us=889,hist=0/0/0/2/638/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 43.154890] STATS,sat_0080,t_ms=9006,sent=640,rcvd=640,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=640,rtt_min_us=9715,rtt_avg_us=11572,rtt_max_us=14789,jitter_us=889,hist=0/0/0/2/638/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 43.155065] EVENT,sat_0080,t_ms=9006,ev=end,reason=done,sent=640
+[ 43.155237] EVENT,node_a,t_ms=9006,ev=exit
+[ 43.184200] # node_a: exit 0
+[ 45.187952] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 100 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0100
+[ 45.190812] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 45.190969] EVENT,sat_0100,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=100,payload=1000,count=0,duration_ms=8000,session=11ba593b
+[ 46.192112] STATS,sat_0100,t_ms=1001,sent=100,rcvd=99,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=99,rtt_min_us=9785,rtt_avg_us=11452,rtt_max_us=14460,jitter_us=752,hist=0/0/0/1/98/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 47.192456] STATS,sat_0100,t_ms=2001,sent=200,rcvd=199,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=199,rtt_min_us=9785,rtt_avg_us=11505,rtt_max_us=14460,jitter_us=797,hist=0/0/0/1/198/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 48.192124] STATS,sat_0100,t_ms=3001,sent=300,rcvd=300,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=300,rtt_min_us=9785,rtt_avg_us=11514,rtt_max_us=14463,jitter_us=1017,hist=0/0/0/2/298/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 49.192796] STATS,sat_0100,t_ms=4001,sent=400,rcvd=399,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=399,rtt_min_us=9711,rtt_avg_us=11541,rtt_max_us=16664,jitter_us=721,hist=0/0/0/4/395/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 50.193685] STATS,sat_0100,t_ms=5002,sent=500,rcvd=499,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=499,rtt_min_us=9546,rtt_avg_us=11468,rtt_max_us=16664,jitter_us=718,hist=0/0/0/7/492/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 51.192790] STATS,sat_0100,t_ms=6001,sent=600,rcvd=599,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=599,rtt_min_us=9441,rtt_avg_us=11474,rtt_max_us=16664,jitter_us=770,hist=0/0/0/9/590/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 52.192223] STATS,sat_0100,t_ms=7001,sent=700,rcvd=699,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=699,rtt_min_us=9441,rtt_avg_us=11483,rtt_max_us=16664,jitter_us=844,hist=0/0/0/9/690/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 53.192134] STATS,sat_0100,t_ms=8001,sent=800,rcvd=799,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=799,rtt_min_us=9441,rtt_avg_us=11505,rtt_max_us=16664,jitter_us=1090,hist=0/0/0/9/790/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 54.191945] STATS,sat_0100,t_ms=9000,sent=800,rcvd=800,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=800,rtt_min_us=9441,rtt_avg_us=11504,rtt_max_us=16664,jitter_us=1078,hist=0/0/0/9/791/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 54.193017] STATS,sat_0100,t_ms=9002,sent=800,rcvd=800,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=800,rtt_min_us=9441,rtt_avg_us=11504,rtt_max_us=16664,jitter_us=1078,hist=0/0/0/9/791/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 54.193384] EVENT,sat_0100,t_ms=9002,ev=end,reason=done,sent=800
+[ 54.193554] EVENT,node_a,t_ms=9002,ev=exit
+[ 54.240290] # node_a: exit 0
+[ 56.247914] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 120 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0120
+[ 56.251216] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 56.251427] EVENT,sat_0120,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=120,payload=1000,count=0,duration_ms=8000,session=01e6e0c4
+[ 57.253145] STATS,sat_0120,t_ms=1001,sent=120,rcvd=119,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=119,rtt_min_us=10540,rtt_avg_us=12912,rtt_max_us=18392,jitter_us=1196,hist=0/0/0/0/119/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 58.252345] STATS,sat_0120,t_ms=2000,sent=240,rcvd=239,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=239,rtt_min_us=10540,rtt_avg_us=13038,rtt_max_us=18392,jitter_us=992,hist=0/0/0/0/239/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 59.253065] STATS,sat_0120,t_ms=3001,sent=360,rcvd=359,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=359,rtt_min_us=10540,rtt_avg_us=13029,rtt_max_us=18392,jitter_us=1932,hist=0/0/0/0/359/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 60.251961] STATS,sat_0120,t_ms=4000,sent=480,rcvd=479,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=479,rtt_min_us=10013,rtt_avg_us=12959,rtt_max_us=18392,jitter_us=1671,hist=0/0/0/0/479/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 61.252671] STATS,sat_0120,t_ms=5001,sent=600,rcvd=599,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=599,rtt_min_us=10013,rtt_avg_us=12969,rtt_max_us=18392,jitter_us=1545,hist=0/0/0/0/599/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 62.252380] STATS,sat_0120,t_ms=6000,sent=720,rcvd=719,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=719,rtt_min_us=10013,rtt_avg_us=13030,rtt_max_us=19049,jitter_us=2032,hist=0/0/0/0/719/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 63.251729] STATS,sat_0120,t_ms=7000,sent=840,rcvd=839,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=839,rtt_min_us=10013,rtt_avg_us=12982,rtt_max_us=19049,jitter_us=1415,hist=0/0/0/0/839/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 64.251972] STATS,sat_0120,t_ms=8000,sent=960,rcvd=959,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=959,rtt_min_us=10013,rtt_avg_us=12965,rtt_max_us=19049,jitter_us=1757,hist=0/0/0/0/959/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 65.254429] STATS,sat_0120,t_ms=9002,sent=960,rcvd=960,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=960,rtt_min_us=10013,rtt_avg_us=12963,rtt_max_us=19049,jitter_us=1677,hist=0/0/0/0/960/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 65.254741] STATS,sat_0120,t_ms=9002,sent=960,rcvd=960,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=960,rtt_min_us=10013,rtt_avg_us=12963,rtt_max_us=19049,jitter_us=1677,hist=0/0/0/0/960/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 65.254904] EVENT,sat_0120,t_ms=9002,ev=end,reason=done,sent=960
+[ 65.255006] EVENT,node_a,t_ms=9003,ev=exit
+[ 65.293415] # node_a: exit 0
+[ 67.298592] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 140 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0140
+[ 67.301683] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 67.301828] EVENT,sat_0140,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=140,payload=1000,count=0,duration_ms=8000,session=5b12ddd7
+[ 68.302087] STATS,sat_0140,t_ms=1000,sent=140,rcvd=139,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=139,rtt_min_us=10209,rtt_avg_us=13353,rtt_max_us=16964,jitter_us=2827,hist=0/0/0/0/139/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 69.302442] STATS,sat_0140,t_ms=2000,sent=280,rcvd=279,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=279,rtt_min_us=10209,rtt_avg_us=13315,rtt_max_us=16964,jitter_us=2543,hist=0/0/0/0/279/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 70.302380] STATS,sat_0140,t_ms=3000,sent=420,rcvd=419,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=419,rtt_min_us=10209,rtt_avg_us=13349,rtt_max_us=16964,jitter_us=2868,hist=0/0/0/0/419/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 71.303019] STATS,sat_0140,t_ms=4001,sent=561,rcvd=559,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=559,rtt_min_us=10209,rtt_avg_us=13371,rtt_max_us=17355,jitter_us=2800,hist=0/0/0/0/559/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 72.302253] STATS,sat_0140,t_ms=5000,sent=700,rcvd=699,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=699,rtt_min_us=10209,rtt_avg_us=13382,rtt_max_us=17355,jitter_us=2798,hist=0/0/0/0/699/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 73.302879] STATS,sat_0140,t_ms=6000,sent=841,rcvd=839,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=839,rtt_min_us=10209,rtt_avg_us=13411,rtt_max_us=18584,jitter_us=2724,hist=0/0/0/0/839/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 74.302930] STATS,sat_0140,t_ms=7001,sent=981,rcvd=979,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=979,rtt_min_us=10209,rtt_avg_us=13392,rtt_max_us=18584,jitter_us=3200,hist=0/0/0/0/979/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 75.302518] STATS,sat_0140,t_ms=8000,sent=1121,rcvd=1119,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1119,rtt_min_us=10209,rtt_avg_us=13388,rtt_max_us=18584,jitter_us=2163,hist=0/0/0/0/1119/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 76.306112] STATS,sat_0140,t_ms=9004,sent=1121,rcvd=1121,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1121,rtt_min_us=10209,rtt_avg_us=13388,rtt_max_us=18584,jitter_us=2308,hist=0/0/0/0/1121/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 76.306570] STATS,sat_0140,t_ms=9004,sent=1121,rcvd=1121,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1121,rtt_min_us=10209,rtt_avg_us=13388,rtt_max_us=18584,jitter_us=2308,hist=0/0/0/0/1121/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 76.307000] EVENT,sat_0140,t_ms=9004,ev=end,reason=done,sent=1121
+[ 76.307196] EVENT,node_a,t_ms=9004,ev=exit
+[ 76.340745] # node_a: exit 0
+[ 78.347685] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 160 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0160
+[ 78.350363] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 78.350501] EVENT,sat_0160,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=160,payload=1000,count=0,duration_ms=8000,session=30a7f1bd
+[ 79.351846] STATS,sat_0160,t_ms=1001,sent=160,rcvd=158,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=158,rtt_min_us=10523,rtt_avg_us=15345,rtt_max_us=18555,jitter_us=1340,hist=0/0/0/0/158/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 80.351444] STATS,sat_0160,t_ms=2000,sent=320,rcvd=318,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=318,rtt_min_us=10523,rtt_avg_us=15545,rtt_max_us=19153,jitter_us=935,hist=0/0/0/0/318/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 81.350663] STATS,sat_0160,t_ms=3000,sent=480,rcvd=478,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=478,rtt_min_us=10523,rtt_avg_us=15997,rtt_max_us=19944,jitter_us=532,hist=0/0/0/0/478/0/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 82.350712] STATS,sat_0160,t_ms=4000,sent=640,rcvd=638,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=638,rtt_min_us=10523,rtt_avg_us=16624,rtt_max_us=21092,jitter_us=415,hist=0/0/0/0/630/8/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 83.351882] STATS,sat_0160,t_ms=5001,sent=800,rcvd=798,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=798,rtt_min_us=10523,rtt_avg_us=16828,rtt_max_us=21092,jitter_us=553,hist=0/0/0/0/790/8/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 84.351366] STATS,sat_0160,t_ms=6000,sent=960,rcvd=958,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=958,rtt_min_us=10523,rtt_avg_us=16793,rtt_max_us=21092,jitter_us=772,hist=0/0/0/0/950/8/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 85.351091] STATS,sat_0160,t_ms=7000,sent=1120,rcvd=1118,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1118,rtt_min_us=10523,rtt_avg_us=16726,rtt_max_us=21552,jitter_us=1705,hist=0/0/0/0/1109/9/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 86.351417] STATS,sat_0160,t_ms=8000,sent=1280,rcvd=1278,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1278,rtt_min_us=10523,rtt_avg_us=16748,rtt_max_us=21552,jitter_us=1289,hist=0/0/0/0/1269/9/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 87.356469] STATS,sat_0160,t_ms=9005,sent=1280,rcvd=1280,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1280,rtt_min_us=10523,rtt_avg_us=16748,rtt_max_us=21552,jitter_us=1351,hist=0/0/0/0/1271/9/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 87.356744] STATS,sat_0160,t_ms=9005,sent=1280,rcvd=1280,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=1280,rtt_min_us=10523,rtt_avg_us=16748,rtt_max_us=21552,jitter_us=1351,hist=0/0/0/0/1271/9/0/0/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 87.356888] EVENT,sat_0160,t_ms=9005,ev=end,reason=done,sent=1280
+[ 87.357069] EVENT,node_a,t_ms=9006,ev=exit
+[ 87.400513] # node_a: exit 0
+[ 89.405544] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 180 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0180
+[ 89.409436] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[ 89.409650] EVENT,sat_0180,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=180,payload=1000,count=0,duration_ms=8000,session=f9e958bf
+[ 90.410819] STATS,sat_0180,t_ms=1001,sent=180,rcvd=153,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=153,rtt_min_us=10896,rtt_avg_us=84642,rtt_max_us=156406,jitter_us=1402,hist=0/0/0/0/11/26/56/60/0/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 91.410386] STATS,sat_0180,t_ms=2000,sent=360,rcvd=306,lost=1,dup=0,reord=0,stale=0,loss_ppm=3257,rtt_n=306,rtt_min_us=10896,rtt_avg_us=155958,rtt_max_us=296980,jitter_us=1603,hist=0/0/0/0/11/26/56/106/107/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 92.410441] STATS,sat_0180,t_ms=3000,sent=540,rcvd=460,lost=26,dup=0,reord=0,stale=0,loss_ppm=53497,rtt_n=460,rtt_min_us=10896,rtt_avg_us=205187,rtt_max_us=309233,jitter_us=1959,hist=0/0/0/0/11/26/56/106/261/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 93.409891] STATS,sat_0180,t_ms=4000,sent=720,rcvd=616,lost=50,dup=0,reord=0,stale=0,loss_ppm=75075,rtt_n=616,rtt_min_us=10896,rtt_avg_us=230067,rtt_max_us=309408,jitter_us=1468,hist=0/0/0/0/11/26/56/106/417/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 94.410472] STATS,sat_0180,t_ms=5000,sent=900,rcvd=769,lost=77,dup=0,reord=0,stale=0,loss_ppm=91016,rtt_n=769,rtt_min_us=10896,rtt_avg_us=244336,rtt_max_us=309408,jitter_us=1859,hist=0/0/0/0/11/26/56/106/570/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 95.410051] STATS,sat_0180,t_ms=6000,sent=1080,rcvd=923,lost=102,dup=0,reord=0,stale=0,loss_ppm=99512,rtt_n=923,rtt_min_us=10896,rtt_avg_us=254096,rtt_max_us=309408,jitter_us=1321,hist=0/0/0/0/11/26/56/106/724/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 96.410668] STATS,sat_0180,t_ms=7000,sent=1261,rcvd=1078,lost=128,dup=0,reord=0,stale=0,loss_ppm=106135,rtt_n=1078,rtt_min_us=10896,rtt_avg_us=261073,rtt_max_us=309408,jitter_us=1511,hist=0/0/0/0/11/26/56/106/879/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 97.410193] STATS,sat_0180,t_ms=8000,sent=1441,rcvd=1232,lost=154,dup=0,reord=0,stale=0,loss_ppm=111111,rtt_n=1232,rtt_min_us=10896,rtt_avg_us=266492,rtt_max_us=309793,jitter_us=1047,hist=0/0/0/0/11/26/56/106/1033/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 98.411753] STATS,sat_0180,t_ms=9001,sent=1441,rcvd=1280,lost=161,dup=0,reord=0,stale=0,loss_ppm=111727,rtt_n=1280,rtt_min_us=10896,rtt_avg_us=267085,rtt_max_us=309793,jitter_us=2472,hist=0/0/0/0/11/26/56/106/1081/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[ 98.411996] STATS,sat_0180,t_ms=9002,sent=1441,rcvd=1280,lost=161,dup=0,reord=0,stale=0,loss_ppm=111727,rtt_n=1280,rtt_min_us=10896,rtt_avg_us=267085,rtt_max_us=309793,jitter_us=2472,hist=0/0/0/0/11/26/56/106/1081/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[ 98.412083] EVENT,sat_0180,t_ms=9002,ev=end,reason=done,sent=1441
+[ 98.412198] EVENT,node_a,t_ms=9002,ev=exit
+[ 98.461142] # node_a: exit 0
+[100.465737] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 200 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0200
+[100.468750] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[100.468888] EVENT,sat_0200,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=200,payload=1000,count=0,duration_ms=8000,session=e4a25a6c
+[101.470247] STATS,sat_0200,t_ms=1001,sent=200,rcvd=148,lost=0,dup=0,reord=0,stale=0,loss_ppm=0,rtt_n=148,rtt_min_us=10756,rtt_avg_us=137193,rtt_max_us=262847,jitter_us=1847,hist=0/0/0/0/7/17/28/58/38/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[102.470038] STATS,sat_0200,t_ms=2001,sent=400,rcvd=300,lost=39,dup=0,reord=0,stale=0,loss_ppm=115044,rtt_n=300,rtt_min_us=10756,rtt_avg_us=220736,rtt_max_us=311617,jitter_us=1581,hist=0/0/0/0/7/17/28/58/190/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[103.469919] STATS,sat_0200,t_ms=3000,sent=600,rcvd=444,lost=96,dup=0,reord=0,stale=0,loss_ppm=177777,rtt_n=444,rtt_min_us=10756,rtt_avg_us=248026,rtt_max_us=311617,jitter_us=1835,hist=0/0/0/0/7/17/28/58/334/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[104.470068] STATS,sat_0200,t_ms=4001,sent=800,rcvd=591,lost=149,dup=0,reord=0,stale=0,loss_ppm=201351,rtt_n=591,rtt_min_us=10756,rtt_avg_us=262056,rtt_max_us=311617,jitter_us=1358,hist=0/0/0/0/7/17/28/58/481/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[105.469757] STATS,sat_0200,t_ms=5000,sent=1000,rcvd=738,lost=201,dup=0,reord=0,stale=0,loss_ppm=214057,rtt_n=738,rtt_min_us=10756,rtt_avg_us=270560,rtt_max_us=311617,jitter_us=1687,hist=0/0/0/0/7/17/28/58/628/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[106.469558] STATS,sat_0200,t_ms=6000,sent=1200,rcvd=886,lost=253,dup=0,reord=0,stale=0,loss_ppm=222124,rtt_n=886,rtt_min_us=10756,rtt_avg_us=276325,rtt_max_us=311617,jitter_us=1927,hist=0/0/0/0/7/17/28/58/776/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[107.470666] STATS,sat_0200,t_ms=7001,sent=1400,rcvd=1031,lost=309,dup=0,reord=0,stale=0,loss_ppm=230597,rtt_n=1031,rtt_min_us=10756,rtt_avg_us=280343,rtt_max_us=311617,jitter_us=1170,hist=0/0/0/0/7/17/28/58/921/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[108.470029] STATS,sat_0200,t_ms=8001,sent=1600,rcvd=1174,lost=365,dup=0,reord=0,stale=0,loss_ppm=237166,rtt_n=1174,rtt_min_us=10756,rtt_avg_us=283237,rtt_max_us=311617,jitter_us=1814,hist=0/0/0/0/7/17/28/58/1064/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[109.471551] STATS,sat_0200,t_ms=9002,sent=1600,rcvd=1224,lost=376,dup=0,reord=0,stale=0,loss_ppm=235000,rtt_n=1224,rtt_min_us=10756,rtt_avg_us=283342,rtt_max_us=311617,jitter_us=2042,hist=0/0/0/0/7/17/28/58/1114/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[109.471860] STATS,sat_0200,t_ms=9002,sent=1600,rcvd=1224,lost=376,dup=0,reord=0,stale=0,loss_ppm=235000,rtt_n=1224,rtt_min_us=10756,rtt_avg_us=283342,rtt_max_us=311617,jitter_us=2042,hist=0/0/0/0/7/17/28/58/1114/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[109.471996] EVENT,sat_0200,t_ms=9002,ev=end,reason=done,sent=1600
+[109.472147] EVENT,node_a,t_ms=9002,ev=exit
+[109.488584] # node_a: exit 0
+[111.494647] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 240 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0240
+[111.497740] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[111.497859] EVENT,sat_0240,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=240,payload=1000,count=0,duration_ms=8000,session=e16a6263
+[112.498697] STATS,sat_0240,t_ms=1000,sent=240,rcvd=133,lost=32,dup=0,reord=0,stale=0,loss_ppm=193939,rtt_n=133,rtt_min_us=10775,rtt_avg_us=197660,rtt_max_us=309036,jitter_us=1883,hist=0/0/0/0/4/8/18/32/71/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[113.498904] STATS,sat_0240,t_ms=2000,sent=480,rcvd=261,lost=144,dup=0,reord=0,stale=0,loss_ppm=355555,rtt_n=261,rtt_min_us=10775,rtt_avg_us=251276,rtt_max_us=312884,jitter_us=1646,hist=0/0/0/0/4/8/18/32/199/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[114.499403] STATS,sat_0240,t_ms=3001,sent=720,rcvd=386,lost=262,dup=0,reord=0,stale=0,loss_ppm=404320,rtt_n=386,rtt_min_us=10775,rtt_avg_us=269289,rtt_max_us=312884,jitter_us=1964,hist=0/0/0/0/4/8/18/32/324/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[115.498083] STATS,sat_0240,t_ms=4000,sent=960,rcvd=521,lost=366,dup=0,reord=0,stale=0,loss_ppm=412626,rtt_n=521,rtt_min_us=10775,rtt_avg_us=278765,rtt_max_us=312884,jitter_us=2130,hist=0/0/0/0/4/8/18/32/459/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[116.499216] STATS,sat_0240,t_ms=5001,sent=1201,rcvd=650,lost=476,dup=0,reord=0,stale=0,loss_ppm=422735,rtt_n=650,rtt_min_us=10775,rtt_avg_us=284462,rtt_max_us=312884,jitter_us=1627,hist=0/0/0/0/4/8/18/32/588/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[117.498335] STATS,sat_0240,t_ms=6000,sent=1440,rcvd=774,lost=592,dup=0,reord=0,stale=0,loss_ppm=433382,rtt_n=774,rtt_min_us=10775,rtt_avg_us=288051,rtt_max_us=312884,jitter_us=1833,hist=0/0/0/0/4/8/18/32/712/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[118.497980] STATS,sat_0240,t_ms=7000,sent=1680,rcvd=899,lost=706,dup=0,reord=0,stale=0,loss_ppm=439875,rtt_n=899,rtt_min_us=10775,rtt_avg_us=290345,rtt_max_us=312884,jitter_us=2003,hist=0/0/0/0/4/8/18/32/837/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[119.498192] STATS,sat_0240,t_ms=8000,sent=1920,rcvd=1029,lost=818,dup=0,reord=0,stale=0,loss_ppm=442880,rtt_n=1029,rtt_min_us=10775,rtt_avg_us=292550,rtt_max_us=312884,jitter_us=2132,hist=0/0/0/0/4/8/18/32/967/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[120.502839] STATS,sat_0240,t_ms=9004,sent=1920,rcvd=1079,lost=841,dup=0,reord=0,stale=0,loss_ppm=438020,rtt_n=1079,rtt_min_us=10775,rtt_avg_us=292456,rtt_max_us=312884,jitter_us=1971,hist=0/0/0/0/4/8/18/32/1017/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[120.503275] STATS,sat_0240,t_ms=9004,sent=1920,rcvd=1079,lost=841,dup=0,reord=0,stale=0,loss_ppm=438020,rtt_n=1079,rtt_min_us=10775,rtt_avg_us=292456,rtt_max_us=312884,jitter_us=1971,hist=0/0/0/0/4/8/18/32/1017/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[120.503471] EVENT,sat_0240,t_ms=9004,ev=end,reason=done,sent=1920
+[120.503668] EVENT,node_a,t_ms=9005,ev=exit
+[120.557518] # node_a: exit 0
+[122.561312] # node_a: ip netns exec hlA /tmp/simbuild/node_a_host --report-interval-ms 1000 --relay-echo 0 --udp-rate-pps 280 --udp-payload-len 1000 --tcp-rate-mps 5 --tcp-payload-len 256 --tcp 0 --udp-drain-ms 1000 --duration-ms 8000 --udp-flow sat_0280
+[122.564043] EVENT,node_a,t_ms=0,ev=boot,dst=192.168.50.1,relay=192.168.50.2,udp=1,tcp=0,relay_echo=0
+[122.564179] EVENT,sat_0280,t_ms=0,ev=start,dst=192.168.50.1:5000,rate_pps=280,payload=1000,count=0,duration_ms=8000,session=42750d21
+[123.564396] STATS,sat_0280,t_ms=1000,sent=280,rcvd=119,lost=72,dup=0,reord=0,stale=0,loss_ppm=376963,rtt_n=119,rtt_min_us=12860,rtt_avg_us=215975,rtt_max_us=313783,jitter_us=2112,hist=0/0/0/0/3/6/12/25/73/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[124.565254] STATS,sat_0280,t_ms=2000,sent=561,rcvd=231,lost=244,dup=0,reord=0,stale=0,loss_ppm=513684,rtt_n=231,rtt_min_us=12860,rtt_avg_us=260058,rtt_max_us=313783,jitter_us=2282,hist=0/0/0/0/3/6/12/25/185/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[125.564882] STATS,sat_0280,t_ms=3000,sent=840,rcvd=342,lost=412,dup=0,reord=0,stale=0,loss_ppm=546419,rtt_n=342,rtt_min_us=12860,rtt_avg_us=275442,rtt_max_us=313783,jitter_us=1719,hist=0/0/0/0/3/6/12/25/296/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[126.565395] STATS,sat_0280,t_ms=4001,sent=1121,rcvd=449,lost=584,dup=0,reord=0,stale=0,loss_ppm=565343,rtt_n=449,rtt_min_us=12860,rtt_avg_us=283114,rtt_max_us=313783,jitter_us=2104,hist=0/0/0/0/3/6/12/25/403/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[127.565690] STATS,sat_0280,t_ms=5001,sent=1400,rcvd=559,lost=751,dup=0,reord=0,stale=0,loss_ppm=573282,rtt_n=559,rtt_min_us=12860,rtt_avg_us=287934,rtt_max_us=313783,jitter_us=1618,hist=0/0/0/0/3/6/12/25/513/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[128.564433] STATS,sat_0280,t_ms=6000,sent=1680,rcvd=669,lost=924,dup=0,reord=0,stale=0,loss_ppm=580037,rtt_n=669,rtt_min_us=12860,rtt_avg_us=291120,rtt_max_us=313783,jitter_us=2368,hist=0/0/0/0/3/6/12/25/623/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[129.564926] STATS,sat_0280,t_ms=7000,sent=1960,rcvd=772,lost=1101,dup=0,reord=0,stale=0,loss_ppm=587827,rtt_n=772,rtt_min_us=12860,rtt_avg_us=293292,rtt_max_us=313783,jitter_us=1926,hist=0/0/0/0/3/6/12/25/726/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[130.565363] STATS,sat_0280,t_ms=8001,sent=2241,rcvd=888,lost=1266,dup=0,reord=0,stale=0,loss_ppm=587743,rtt_n=888,rtt_min_us=12860,rtt_avg_us=295104,rtt_max_us=313783,jitter_us=1532,hist=0/0/0/0/3/6/12/25/842/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[131.565637] STATS,sat_0280,t_ms=9001,sent=2241,rcvd=937,lost=1304,dup=0,reord=0,stale=0,loss_ppm=581883,rtt_n=937,rtt_min_us=12860,rtt_avg_us=294753,rtt_max_us=313783,jitter_us=2299,hist=0/0/0/0/3/6/12/25/891/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=0
+[131.565930] STATS,sat_0280,t_ms=9001,sent=2241,rcvd=937,lost=1304,dup=0,reord=0,stale=0,loss_ppm=581883,rtt_n=937,rtt_min_us=12860,rtt_avg_us=294753,rtt_max_us=313783,jitter_us=2299,hist=0/0/0/0/3/6/12/25/891/0/0/0,tx_err=0,bad=0,foreign=0,corrupt=0,final=1
+[131.566027] EVENT,sat_0280,t_ms=9001,ev=end,reason=done,sent=2241
+[131.566099] EVENT,node_a,t_ms=9001,ev=exit
+[131.618658] # node_a: exit 0

@@ -1,0 +1,6 @@
+[  0.004146] # tcpdump: ip netns exec hlA tcpdump -i eth0 -n -U -s 96 -B 8192 -w /tmp/sim_direct_saturation.pcap udp port 5000
+[  0.014929] tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 96 bytes
+[134.265365] 23244 packets captured
+[134.265476] 23244 packets received by filter
+[134.265534] 0 packets dropped by kernel
+[134.299077] # tcpdump: exit 0
